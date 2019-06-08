@@ -40,7 +40,7 @@ signal=7
 interval=3600
 signal=5
 
-[remindcount]
+[reminder]
 label=📔
 interval=1800
 
