@@ -1,0 +1,17 @@
+#!/bin/sh
+# This script will restart i3, and
+# refresh some other things.
+
+i3 restart # Restart i3
+
+keybindings() { # This will restart `sxhkd`, the keybinding master.
+pkill sxhkd ; sxhkd &
+}
+
+notifications() { # This will refresh notifications daemon, `dunst`.
+pkill dunst ; dunst &
+}
+
+keybindings >/dev/null 2>&1
+notifications >/dev/null 2>&1
+notify-send "🍚 i3 has been restarted."

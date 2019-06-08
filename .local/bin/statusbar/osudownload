@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# i3blocks osusearch module.
+# Displays if osusearch is downloading a map.
+
+case $BLOCK_BUTTON in
+	3) pgrep -x dunst >/dev/null && notify-send "`echo -e '📔 Remind module\n- Shows downloading icon (if it downloads).'`" ;;
+esac
+
+echo "$(cat /tmp/osuicon)"

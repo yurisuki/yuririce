@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# i3blocks setbg module.
+# Displays if setbg is setting a background.
+
+echo "$(cat /tmp/bgicon 2>/dev/null)"

@@ -1,0 +1,16 @@
+#!/bin/sh
+# This is lockscreen script I use.
+
+# Pause music (mocp, mpd, send the pause key to all mpv videos and pause spotify music):
+mocp -P >/dev/null 2>&1
+mpc pause >/dev/null 2>&1
+pauseallmpv >/dev/null 2>&1
+sp pause >/dev/null 2>&1
+
+### Lock the screen
+betterlockscreen -l dimblur &
+
+# Dim screen
+sleep 0.1 && xset dpms force off &
+
+wait

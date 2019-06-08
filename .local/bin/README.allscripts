@@ -1,0 +1,24 @@
+├── i3cmds
+│   ├── cabl
+│   ├── dmen
+│   ├── googlesearch
+│   ├── lockscreen
+│   ├── maimpuush
+│   ├── spotcav
+│   └── transl
+├── README.allscripts
+├── statusbar
+│   ├── osustatus
+│   ├── reminder
+│   └── spotify.py
+├── tools
+│   ├── bootiso
+│   ├── numlock
+│   ├── optional
+│   ├── puush
+│   ├── remaps
+│   ├── remaps_
+│   ├── remind
+│   ├── setbg
+│   └── spotdl
+└── yuririce.png

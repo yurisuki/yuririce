@@ -1,0 +1,10 @@
+pat() {
+sleep 3 && echo -e "lol\nfuck\nshut up\ndick\nwiener" | dmenu -b -p "Dictionary"
+}
+
+mat() {
+sleep 4
+maimpuush
+}
+
+pat & mat

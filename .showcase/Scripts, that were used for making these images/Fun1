@@ -1,0 +1,7 @@
+refresh() {
+clear
+echo -e "The current time is: $(date +%r)\nAnd the date is: $(date +"%D")"
+sleep 1
+refresh
+}
+refresh

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# i3block reminder module.
+# Displays number of reminders.
+# When clicked, brings up `remind --open`.
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e remind --open ;;
+	3) pgrep -x dunst >/dev/null && notify-send "$(echo -e "📔 Remind module\n- Shows remind count.\n- Shows number of reminders\n- Left click opens remind --open")" ;;
+esac
+
+remind --count | sed -e "s/^0$//g"

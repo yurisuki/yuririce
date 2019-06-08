@@ -1,0 +1,8 @@
+#!/bin/sh
+# Whenever the spotify state changes, update the mpd i3 module.
+kill -0 "$(cat /tmp/spotifyupdate)" 2>/dev/null && exit || echo $$ > /tmp/spotifyupdate
+
+sleep 5 && while : ; do
+	pkill -RTMIN+11 i3blocks
+	spotifymusic >/dev/null || exit
+done

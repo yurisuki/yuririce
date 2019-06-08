@@ -1,0 +1,32 @@
+#!/bin/sh
+# This script will give you an option
+# to toggle a desktop compositor.
+
+# Check for a file with a number.
+# If the number=1, then compositor will
+# start on WM start, if number=0, then
+# nothing won't happen.
+! cat ~/.local/share/comptog >/dev/null 2>&1 && echo 0 >~/.local/share/comptog
+
+tog=$(cat ~/.local/share/comptog)
+
+args() {
+xcompmgr & echo "1" >~/.local/share/comptog && exit
+}
+
+checkandtog() { # This function will toggle xcompmgr
+	! pgrep -u "$USER" xcompmgr>/dev/null && args
+	killall xcompmgr && echo "0" >~/.local/share/comptog && exit
+}
+
+checknumandtog() {
+case "$tog" in
+	1) sleep 0.5 && xcompmgr ;;
+	*) ;;
+esac
+}
+
+case "$1" in
+	t*) checkandtog ;;
+	*) checknumandtog ;;
+esac

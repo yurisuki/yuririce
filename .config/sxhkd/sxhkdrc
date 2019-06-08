@@ -1,0 +1,145 @@
+# Basic binds
+super + Return
+	$TERMINAL
+super + KP_Enter
+	$TERMINAL
+super + d
+	dmenu_run
+super + r
+	$TERMINAL -e $FILE
+super + e
+	$TERMINAL -e neomutt
+super + m
+	Spotify
+super + shift + m
+	sp play && lmc mute
+super + n
+	$TERMINAL -e newsboat
+super + i
+	$TERMINAL -e htop
+super + z
+	$TERMINAL -e calcurse -C ~/.config/calcurse
+super + shift + a
+	$TERMINAL -e pulsemixer
+super + shift + c
+	camtoggle
+super + w
+	$TERMINAL -e nmtui
+super + shift + w
+	$BROWSER
+super + shift + g
+	i3 workspace 5 && gimp
+
+# Et cetera...
+super + grave
+	dmenuunicode
+super + Scroll_Lock
+	killall screenkey || screenkey
+super + Insert
+	transl
+super + shift + Insert
+	showclip
+super + shift + alt + Insert
+	xcqr
+super + shift + x
+	prompt "Do you want to shutdown your computer?" "sudo -A shutdown -h now"
+super + shift + BackSpace
+	prompt "Do you want to reboot your computer?" "sudo -A reboot -h now"
+super + x
+	lockscreen
+XF86Launch1
+	xset dpms force off
+XF86AudioNext
+	mpc next & sp next
+XF86AudioPlay
+	mpc toggle & sp play
+XF86AudioPrev
+	mpc prev & sp prev
+XF86AudioStop
+	mpc toggle & sp toggle
+XF86AudioRaiseVolume
+	lmc up 5
+XF86AudioLowerVolume
+	lmc down 5
+XF86AudioMute
+	lmc mute
+XF86MonBrightnessDown
+	xbacklight -dec 15
+XF86MonBrightnessUp
+	xbacklight -inc 15
+# Recording
+# Take screenshot
+Print
+	maimpuush
+# Pick screenshot type
+shift + Print
+	maimpick
+# Record audio or video
+super + Print
+	dmenurecord
+# kill active recording
+super + Delete
+	dmenurecord kill
+# toggle compositor
+shift+Scroll_Lock
+	compositor toggle
+
+# Pause audio
+super + {_,shift +} p
+	lmc {toggle,pause}
+# Changes to next/previous tracks
+super + {comma,period}
+	lmc {prev,next} & sp {prev,next}
+# Restart track
+super + shift + less
+	lmc replay
+# Increase volume
+super + {equal,plus}
+	lmc up {5,15}
+# Decrease volume
+super {_,shift +} + minus
+	lmc down {5,15}
+# Seek foward in song
+super + {_,shift +} bracketright
+	lmc forward {10,120}
+# Seek backward in song
+super + {_,shift +} bracketleft
+	lmc back {10,120}
+
+# Function keys
+# Show readme
+super + F1
+	notify-send -i ~/.scripts/yuririce.png "The documentation doesn't exist. (yet)"
+# F2 is restart in i3 right now.
+# Change display
+super + F3
+	displayselect
+# Hibernate
+super + F4
+	prompt 'Do you want to hibernate computer?' 'sudo systemctl suspend'
+# Restart/rescan wifi/eth networks
+super + F5
+	sudo -A systemctl restart NetworkManager
+# Start torrent daemon/open interface
+super + F6
+	torwrap
+# toggle torrent daemon
+super + F7
+	td-togggle
+# sync email
+super + F8
+	mailsync
+# Mount a USB drive or Android device
+super + F9
+	dmenumount
+# Unmount a USB drive or Android device
+super + F10
+	dmenuumount
+# Search with Duckduckgo
+super + F11
+	googlesearch
+# Search with osu!
+super + F12
+	osusearch
+
+

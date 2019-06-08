@@ -1,0 +1,56 @@
+#!/bin/bash
+# This script is trying to be like neofetch,
+# but written in bash and it's fast.
+#
+# Made by yurisuki <yurisuki@waifu.club>
+
+## Text of your choice.
+figlettext="V" # Text/letter that will be shown.
+emoji="♡" # Emoji/letter that will be shown. (optional)
+
+## Informations about your system.
+# Get the OS
+BASENAME=$(cat /etc/*release | grep PRETTY_NAME | awk -F'"' '{print $2}')
+
+# Get the WM
+WM=$(tail -n 1 "$HOME/.xinitrc" | awk '{print $2}')
+
+# Read package count
+PACKAGE_COUNT=$(cat "$HOME/.local/share/packages")
+
+## Make my work easier
+# [@]
+at="[@]"
+
+# Colors
+red="\e[1;31m"
+grn="\e[1;32m"
+yel="\e[1;33m"
+blu="\e[1;34m"
+mag="\e[1;35m"
+cyn="\e[1;36m"
+end="\e[0m"
+
+## Grep package count
+[ -z "$1" ] || case "$1" in
+		p*) case "$BASENAME" in
+			"Void Linux")
+				xbps-query -l | wc -l >$HOME/.local/share/packages & ;;
+			Manjaro* | Arch* | Arco* | Artix* | Parabola*)
+				pacman -Qq | wc -l >${HOME}/.local/share/packages & ;;
+			*)
+				echo "Couldn't get package count." >${HOME}/.local/share/packages & ;;
+		esac
+		exit ;;
+		*) printf "ARGUMENTS:\\n----------\\n packages: refresh all packages\\n\\nfetch script for ricing your terminal, made by yurisuki <yurisuki@waifu.club>\\n" && exit ;;
+esac
+
+## It's time to display everything.
+# You don't actually need to change anything here. All the text changes are done through variables at the beginning of this script.
+clear # Remove junk
+printf "\\n\\n\\n" # Print empty lines.
+printf "$(figlet -f "Larry 3D" "${figlettext}") ${emoji}\\n\\n\\n" # Print art
+# You can change colors in the variables if you want to. See all the available colors in "Colors" section, or add your own.
+printf "${grn}${at} OS: ${BASENAME}\\n${at} USER: ${USER}\\n${blu}${at} SHELL: ${SHELL}\\n${at} WM: $WM\\n${mag}${at} PACKAGES: ${PACKAGE_COUNT}\\n${at} HOSTNAME: $HOSTNAME\\n${end}" # Print system information
+
+# I'm aware, that the `printf`s I wrote are really spaghetti in terms of reading, but I haven't found any other way to do it.

@@ -1,0 +1,36 @@
+#!/bin/bash
+# This script will download a music
+# from a given song id.
+[ -z "$1" ] && echo "Usage: $0 <song id> or <--help>" && exit
+
+echowrapper() {
+echo -e "$1"
+exit
+}
+
+case "$1" in
+	--help) echowrapper "This wrapper downloads songs from Spotify from given song id\n\nARGUMENTS\n---------\n--help	Shows this menu\n--api	Shows a guide on generating your Spotify access token\n\nMade by yurisuki <yurisuki@waifu.club>, this script is made under GPL." ;;
+	--api) xdg-open "https://github.com/invicnaper/spotify-dl/issues/9#issuecomment-329709090" >/dev/null & echowrapper "Sorry, I can't explain this but this guy can."
+esac
+
+gettoken() {
+echo "Please enter your spotify access token:"
+printf "  "
+read SPOTIFY_ACCESS_TOKEN
+echo "export SPOTIFY_ACCESS_TOKEN=\"$SPOTIFY_ACCESS_TOKEN\"" >> ~/.bashrc
+source ~/.bashrc
+}
+
+[ -z "$SPOTIFY_ACCESS_TOKEN" ] && gettoken
+
+ohno() {
+echo -e "ERROR:\n$1"
+exit
+}
+
+mkdir ~/music >/dev/null 2>&1
+cd ~/music || ohno "The folder wasn't made????!?!?!!!"
+
+spotify-dl --track "$1" \
+--dl youtube \
+--access_token "$SPOTIFY_ACCESS_TOKEN"

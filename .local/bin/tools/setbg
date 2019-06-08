@@ -1,0 +1,47 @@
+#!/bin/sh
+# This script will set a wallpaper
+# on wal, betterlockscreen or both.
+# It's used by vifm, but it can be
+# also used in terminal.
+
+badfile="This file type can't be used as a wallpaper."
+waldir="${HOME}/.config/wall.png"
+lockdir="${HOME}/.config/walllock.png"
+
+echowrapper() {
+printf "$1\n"
+exit
+}
+
+help() { # This
+	echowrapper "This script will set a wallpaper on wal, betterlockscreen or both.\\nARGUMENTS\\n---------\\n all: Change wallpaper for wal and betterlockscreen\\n lock: Change wallpaper only for betterlockscreen.\\n wal: Change wallpaper only for wal.\\n refresh: Refresh wallpaper (This is used by i3 to load the wallpaper.)"
+}
+
+statusbar() {
+case "$1" in
+	s*) echo "🔄" >/tmp/bgicon && pkill -RTMIN+12 i3blocks ;;
+	d*) rm -f "/tmp/bgicon" && pkill -RTMIN+12 i3blocks ;;
+	f*) echo "❌" >/tmp/bgicon && pkill -RTMIN+12 i3blocks && notify-send -t 5000 "❌ Your wallpaper hasn't changed." && sleep 5 && "rm -f /tmp/bgicon" && pkill -RTMIN+12 i3blocks ;;
+esac
+}
+
+[ -z "$1" ] && help
+
+case "$1" in
+	--help) help ;;
+	all) case "$2" in
+		*.png | *.jpg) statusbar start && wal -i "$2" && cp "$2" "$waldir" && betterlockscreen -u "$waldir" && wal -c && source ~/.login && ncftpput -u "$USR" -p "$PASS" "$SERVER" "$DIR" "$waldir" >/dev/null 2>&1 && statusbar done || statusbar fail ;;
+		*) echowrapper "$badfile" ;;
+	esac ;;
+	lock) case "$2" in
+		*.png | *.jpg) statusbar start && cp "$2" "$lockdir" && betterlockscreen -u "$lockdir" && statusbar done || statusbar fail ;;
+		*) echowrapper "$badfile" ;;
+	esac ;;
+	wal) case "$2" in
+		*.png | *.jpg) statusbar start && wal -i "$2" && cp "$2" "$waldir" && source ~/.login && ncftpput -u "$USR" -p "$PASS" "$SERVER" "$DIR" "$waldir" >/dev/null 2>&1 && statusbar done || statusbar fail ;;
+		*) echowrapper "$badfile" ;;
+	esac ;;
+	refresh) ! [ -f "$waldir" ] && notify-send "$(printf "❌ wall.png doesn't exist.\\nWon't refresh a wallpaper.")" && echowrapper "$waldir doesn't exist."
+	wal -i "$waldir" >/dev/null & ;;
+	*) echowrapper "This argument doesn't exist. See avalible arguments by using $0 <--help>." ;;
+esac
