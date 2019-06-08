@@ -16,9 +16,8 @@ dunst 		> customizable notification daemon
 i3 (i3-gaps)	> tilling wm I use
 i3blocks	> feed for status bar
 ranger 		> vim-inspired filemanager
-aliasrc 	> some aliases I use
-wall.png	> wallpaper I use
-walllock.png	> wallpaper I use for `lockscreen` script
+*rc 		> some aliases and shortcuts
+wall*	 	> wallpapers I use for desktop and lockscreen
 sxhkd		> keybindings master
 bm*		> aliases for time saving
 -------
@@ -75,12 +74,6 @@ sed -i 's/chromium/firefox/g' ~/.profile
 You can also help me achieve my goals by contibuting to my GitHub repository by using pull requests and issues (if any bug occurs.)
 
 # faq
-Why does GitHub show that no one contributes to this repo?
-- It happens because in my 'git' in terminal I have a different global email that I don't have on my GitHub. I would change my GitHub email address, but you can't add [cock.li](https://cock.li/) as verified email address to GitHub.
-
-Will you have any documentation?
-- Maybe I'll do it.
-
 What wallpaper do you currently use?
 - I've got my FTP server, where I have my website. I made a ["script"](https://github.com/yurisuki/yuririce/commit/9e8907be6809b99f8402d239e4f2b8a1079bfd26) which automatically uploades my wallpaper whenever I change my wallpaper to that FTP server, and in the result, I can view my wallpaper from anywhere and use it as my [New tab page](http://yuri.rf.gd/newpage/).
 
