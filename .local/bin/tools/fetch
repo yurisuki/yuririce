@@ -18,18 +18,24 @@ WM=$(tail -n 1 "$HOME/.xinitrc" | awk '{print $2}')
 # Read package count
 PACKAGE_COUNT=$(cat "$HOME/.local/share/packages")
 
+## Some aren't used by default.
+# System uptime
+#UPTIME=$(uptime -p | cut -d ' ' -f2-)
+
+# Kernel version
+#KERNEL=$(uname -r)
+
 ## Make my work easier
 # [@]
 at="[@]"
 
 # Colors
-red="\e[1;31m"
-grn="\e[1;32m"
-yel="\e[1;33m"
-blu="\e[1;34m"
-mag="\e[1;35m"
-cyn="\e[1;36m"
-end="\e[0m"
+red="$(tput setaf 1)"
+grn="$(tput setaf 2)"
+yel="$(tput setaf 3)"
+blu="$(tput setaf 4)"
+mag="$(tput setaf 5)"
+cyn="$(tput setaf 6)"
 
 ## Grep package count
 [ -z "$1" ] || case "$1" in
@@ -47,10 +53,19 @@ esac
 
 ## It's time to display everything.
 # You don't actually need to change anything here. All the text changes are done through variables at the beginning of this script.
-clear # Remove junk
-printf "\\n\\n\\n" # Print empty lines.
-printf "$(figlet -f "Larry 3D" "${figlettext}") ${emoji}\\n\\n\\n" # Print art
-# You can change colors in the variables if you want to. See all the available colors in "Colors" section, or add your own.
-printf "${grn}${at} OS: ${BASENAME}\\n${at} USER: ${USER}\\n${blu}${at} SHELL: ${SHELL}\\n${at} WM: $WM\\n${mag}${at} PACKAGES: ${PACKAGE_COUNT}\\n${at} HOSTNAME: $HOSTNAME\\n${end}" # Print system information
+clear
+printf "\\n\\n$(figlet -f "Larry 3D" "${figlettext}") ${emoji}"
 
-# I'm aware, that the `printf`s I wrote are really spaghetti in terms of reading, but I haven't found any other way to do it.
+cat << EOF # Displaying all things using `EOF`
+
+
+${grn}${at} OS: ${BASENAME}
+${at} USER: ${USER}
+${blu}${at} SHELL: ${SHELL}
+${at} WM: $WM
+${mag}${at} PACKAGES: ${PACKAGE_COUNT}
+${at} HOSTNAME: $HOSTNAME
+EOF
+
+# Reset all the colors.
+tput setaf 7
