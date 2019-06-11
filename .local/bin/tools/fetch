@@ -53,7 +53,7 @@ esac
 
 ## It's time to display everything.
 # You don't actually need to change anything here. All the text changes are done through variables at the beginning of this script.
-clear
+clear # Clean all the mess.
 printf "\\n\\n$(figlet -f "Larry 3D" "${figlettext}") ${emoji}"
 
 cat << EOF # Displaying all things using `EOF`
@@ -67,5 +67,4 @@ ${mag}${at} PACKAGES: ${PACKAGE_COUNT}
 ${at} HOSTNAME: $HOSTNAME
 EOF
 
-# Reset all the colors.
-tput setaf 7
+tput setaf 7 # Reset all the colors.
