@@ -212,7 +212,7 @@ for_window [class="sent"] border pixel 0px
 for_window [class="Blender"] move to workspace $ws6
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
-for_window [window_role="GtkFileChooserDialog"] resize shrink height 3 px
+for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 for_window [title="Default - Wine desktop"] floating enable
 for_window [title=pulsemixer] floating enable border pixel 3
 
