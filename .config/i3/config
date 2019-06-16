@@ -6,7 +6,7 @@
 # <___'
 #
 #
-# 06/01/2019
+# 06/16/2019
 # Made by yurisuki <yurisuki@waifu.club>
 # NOTE: All additional scripts are started by `xorg`. You can edit them in `~/.xinitrc`.
 # NOTE: Most keybindings are set by `sxhkd`. You can edit them in `~/.config/sxhkd/sxhkdrc`
@@ -91,12 +91,12 @@ bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-
 
 # Show selection:
 bindsym $mod+Shift+Insert	exec --no-startup-id showclip
-bindsym $mod+Pause		exec --no-startup-id xcqr
 bindsym $mod+Insert 		exec --no-startup-id transl
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
+bindsym $mod+Ctrl+q		focus parent; kill
 
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
@@ -116,14 +116,14 @@ bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+d 		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (super+shift+f to exit)
 mode "$freeze" { bindsym $mod+Shift+f mode "default"
 }
 
 bindsym $mod+f			fullscreen toggle
-bindsym $mod+Shift+f		mode "$freeze" ;; exec --no-startup-id notify-send "$(echo -e "🛌 Distraction-free mode activated.\nPress Super+Shift+f to return.")"
+bindsym $mod+Shift+f		mode "$freeze" ;; exec --no-startup-id notify-send "🛌 Distraction-free mode activated." "Press Super+Shift+f to return."
 
 bindsym $mod+g			workspace prev
 
@@ -212,8 +212,9 @@ for_window [class="sent"] border pixel 0px
 for_window [class="Blender"] move to workspace $ws6
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
-for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
+for_window [window_role="GtkFileChooserDialog"] resize shrink height 3 px
 for_window [title="Default - Wine desktop"] floating enable
+for_window [title=pulsemixer] floating enable border pixel 3
 
 # Bindings to make the webcam float and stick.
 for_window [title="mpvfloat"] floating enable

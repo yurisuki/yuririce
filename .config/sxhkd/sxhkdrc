@@ -22,7 +22,7 @@ super + i
 super + z
 	$TERMINAL -e calcurse -C ~/.config/calcurse
 super + shift + a
-	$TERMINAL -e pulsemixer
+	! pgrep pulsemixer && $TERMINAL -e pulsemixer
 super + shift + c
 	camtoggle
 super + w
