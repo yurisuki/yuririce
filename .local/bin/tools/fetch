@@ -8,6 +8,8 @@
 figlettext="V" # Text/letter that will be shown.
 emoji="♡" # Emoji/letter that will be shown. (optional)
 
+! figlet -f "Larry 3D" "test" >/dev/null 2>&1 && nofonts=1
+
 ## Informations about your system.
 # Get the OS
 BASENAME=$(cat /etc/*release | grep PRETTY_NAME | awk -F'"' '{print $2}')
@@ -58,7 +60,21 @@ esac
 ## It's time to display everything.
 # You don't actually need to change anything here. All the text changes are done through variables at the beginning of this script.
 clear
-printf "\\n\\n\\n\\n$(figlet -f "Larry 3D" "${figlettext}") ${emoji}"
+! [ "$nofonts" = "1" ] && printf "\\n\\n\\n\\n$(figlet -f "Larry 3D" "${figlettext}") ${emoji}" || cat << \EOF
+                      .---.     .---.
+                     ( -o- )---( -o- )
+                     ;-...-`   `-...-;
+                    /                 \
+                   /                   \
+                  | /_               _\ |
+                  \`'.`'"--.....--"'`.'`/
+                   \  '.   `._.`   .'  /
+                _.-''.  `-.,,_,,.-`  .''-._
+               `--._  `'-.,_____,.-'`  _.--`
+                    /                 \
+                   /.-'`\   .'.   /`'-.\
+                  `      '.'   '.'
+EOF
 
 cat << EOF # Displaying all things using `EOF`
 
