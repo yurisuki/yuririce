@@ -37,7 +37,7 @@ bm*		> aliases for time saving
  -  [faq](#faq)
 
 # introduction
-This rice is the one I use currently on [Artix Linux](https://artixlinux.org/)/[Arch Linux](https://www.archlinux.org/)/[Void Linux (not installed by YARBS tho)](https://voidlinux.org/), and it's highly dependant on [LARBS](https://github.com/LukeSmithxyz/LARBS) by [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) with huge modifications I made to make it comfy as much as possible
+This rice is the one I use currently on [Arch Linux](https://www.archlinux.org/) and [Void Linux](https://voidlinux.org/), and it's highly dependant on [voidrice](https://github.com/LukeSmithxyz/voidrice) by [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) with huge modifications I made to make it comfy as much as possible
 
 # what does it look like?
 [![](screenshot.png)](http://yuri.rf.gd/yuririce)
@@ -47,10 +47,16 @@ By clicking on it you can show more screenshots!
 # installation
 It's really simple!
 
+## Arch Linux
 On ***CLEAN ARCH LINUX INSTALLATION*** do:
+```shell
+curl https://puu.sh/DJFrq/331309f26c.sh | bash
 ```
-curl -LO http://yurisuki.github.io/yarbs.sh
-bash yarbs.sh
+
+## Void Linux
+On **CLEAN VOID LINUX INSTALLATION** do:
+```shell
+curl https://puu.sh/DJFvz/609753a3b8.sh | bash
 ```
 
 ### additional
