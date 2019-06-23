@@ -53,6 +53,8 @@ On ***CLEAN ARCH LINUX INSTALLATION*** do:
 curl https://puu.sh/DJFrq/331309f26c.sh | bash
 ```
 
+***
+
 ## Void Linux
 On **CLEAN VOID LINUX INSTALLATION** do:
 ```shell
