@@ -1,0 +1,12 @@
+#!/bin/bash
+# This script will clone all user's repositories on GitHub by given username.
+
+[ -z "$1" ] && printf "This script will clone all user's repositories on GitHub by given username.\\n============================================================================\\nYou haven't written any username.\\n" && exit
+
+username=$1
+mkdir ~/git >/dev/null 2>&1
+cd ~/git
+
+for clone in `curl -s https://api.github.com/users/$username/repos | grep clone_url | awk {'print $2'} | tr -d \",`; do
+	git clone "$clone";
+done
