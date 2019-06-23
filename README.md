@@ -59,6 +59,8 @@ On **CLEAN VOID LINUX INSTALLATION** do:
 curl https://puu.sh/DJFvz/609753a3b8.sh | bash
 ```
 
+***
+
 ### additional
 My rice uses Czech keyboard layout, so you might want to change it.
 ```
