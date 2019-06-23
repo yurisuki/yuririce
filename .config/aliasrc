@@ -25,6 +25,7 @@ alias ka="killall" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	upc="p -Syu --noconfirm --noedit; pkill -RTMIN+8 i3blocks" \
 	lsp="pacman -Qett --color=always | less" \
+	clr="clear" \
 	ffmpeg="ffmpeg -hide_banner" \
 	upgm="mailsync" \
 	update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
