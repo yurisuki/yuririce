@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# This script will upload file using `curl` to puush.
 if [ "$1" = "-" ]
 then
     if [ "$2" != "" ]
@@ -37,5 +37,7 @@ then
     exit 3
 fi
 
-curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$FN" | sed -E 's/^.+,(.+),.+,.+$/\1\n/' | xclip -selection clipboard
+link=$(curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$FN" | sed -E 's/^.+,(.+),.+,.+$/\1\n/')
+echo $link | xclip -selection clipboard
+echo $link
 rm /tmp/puush-tmp.* 2>/dev/null
