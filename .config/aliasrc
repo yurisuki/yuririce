@@ -7,6 +7,7 @@ alias ka="killall" \
 	P="sudo pacman" \
 	SS="sudo systemctl" \
 	f="$FILE" \
+	mkdir="mkdir -p" \
 	g="git" \
 	trem="transmission-remote" \
 	e="$EDITOR" \
