@@ -30,7 +30,7 @@ super + w
 super + shift + w
 	$BROWSER
 super + shift + g
-	i3 workspace 5 && gimp
+	ifinstalled "gimp" && gimp
 
 # Et cetera...
 super + Scroll_Lock
