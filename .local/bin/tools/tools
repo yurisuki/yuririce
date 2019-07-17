@@ -1,0 +1,30 @@
+#!/bin/sh
+# This script will give you a `dmenu` with tools
+# installed on your system.
+
+### Variables:
+# Here will be all the available programs dropped.
+programlist="/tmp/tools"
+
+### Functions:
+checkifinstalled() { # This function will check if program is installed.
+	# Usage: `checkifinstalled gimp`
+	for currentprogram in "$@"; do
+		command -v "$currentprogram" && echo "$currentprogram" >> $programlist
+	done
+}
+
+## Remove the list, so we don't have mess in `dmenu`.
+rm "$programlist"
+
+## The script will look up for these programs, I could potentially add some more, but I couldn't think about any at the moment.
+checkifinstalled gimp inkscape blender krita kdenlive
+
+## Check if atleast 1 program is installed on machine.
+[ "$(wc -l < $programlist)" = "0" ] && notify-send "ℹ️ No tools are installed." && exit
+
+## Open `dmenu` and let user select.
+! menu=$(dmenu -i -p "What program do you want to open?" < $programlist) && exit
+
+## Open the program.
+$menu

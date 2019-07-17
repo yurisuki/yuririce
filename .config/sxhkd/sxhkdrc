@@ -30,7 +30,7 @@ super + w
 super + shift + w
 	$BROWSER
 super + shift + g
-	ifinstalled "gimp" && gimp
+	tools
 
 # Et cetera...
 super + Scroll_Lock
