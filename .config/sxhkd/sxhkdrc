@@ -4,7 +4,7 @@ super + Return
 super + KP_Enter
 	$TERMINAL
 super + d
-	dmenu_run
+	dmenu_run -nf '#77A9BB' -nb '#0B0D22' -sb '#722E77' -sf '#EE61A7'
 super + r
 	$TERMINAL -e $FILE
 super + control + Return
