@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# i3blocks nordvpn module.
+# Displays nordvpn status.
+# When clicked, it toggles nordvpn connection.
+
+nordvpn -h >/dev/null 2>&1 || exit
+
+togglevpn() {
+	case "$(nordvpn status)" in
+		*Disconnected) notify-send "🌏 Turning on VPN..." && nordvpn c ;;
+		*Connected*) notify-send "🌏 Turning off VPN..." && nordvpn d ;;
+	esac
+
+}
+
+case "$BLOCK_BUTTON" in
+	1) togglevpn ;;
+	2) pgrep -x dunst >/dev/null && notify-send "🌏 $(nordvpn status)" ;;
+	3) pgrep -x dunst >/dev/null && notify-send "🌏 VPN module" "\- Shows VPN status
+- Shows ✅ in case nordvpn is on
+- Left click toggles nordvpn
+- Middle click displays \`nordvpn status\`."
+esac
+
+case "$(nordvpn status)" in
+	*Connected*) echo "✅" ;;
+	*) exit ;;
+esac
