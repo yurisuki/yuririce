@@ -8,8 +8,8 @@ nordvpn -h >/dev/null 2>&1 || exit
 
 togglevpn() {
 	case "$(nordvpn status)" in
-		*Disconnected) notify-send "🌏 Turning on VPN..." && nordvpn c ;;
-		*Connected*) notify-send "🌏 Turning off VPN..." && nordvpn d ;;
+		*Disconnected) notify-send "🌏 Turning on VPN..." && nordvpn c >/dev/null 2>&1 ;;
+		*Connected*) notify-send "🌏 Turning off VPN..." && nordvpn d >/dev/null 2>&1 ;;
 	esac
 
 }
@@ -25,5 +25,5 @@ esac
 
 case "$(nordvpn status)" in
 	*Connected*) echo "✅" ;;
-	*) exit ;;
+	*) echo "❌" ;;
 esac
