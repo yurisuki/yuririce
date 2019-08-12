@@ -16,9 +16,10 @@ togglevpn() {
 
 case "$BLOCK_BUTTON" in
 	1) togglevpn ;;
-	2) pgrep -x dunst >/dev/null && notify-send "🌏 $(nordvpn status)" ;;
-	3) pgrep -x dunst >/dev/null && notify-send "🌏 VPN module" "\- Shows VPN status
+	2) pgrep -x dunst >/dev/null && notify-send "🍙 $(nordvpn status)" ;;
+	3) pgrep -x dunst >/dev/null && notify-send "🍙 VPN module" "\- Shows VPN status
 - Shows ✅ in case nordvpn is on
+- Shows ❌ in case nordvpn is off
 - Left click toggles nordvpn
 - Middle click displays \`nordvpn status\`."
 esac
