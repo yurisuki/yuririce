@@ -97,13 +97,15 @@ super + F4
 	prompt 'Do you want to hibernate computer?' 'sudo systemctl suspend'
 # Restart/rescan wifi/eth networks
 super + F5
-	sudo -A systemctl restart NetworkManager
+# Toggle VPN
+super + shift + F5
+	vpntog
 # Start torrent daemon/open interface
 super + F6
 	torwrap
 # toggle torrent daemon
 super + F7
-	td-togggle
+	td-toggle
 # sync email
 super + F8
 	mailsync
