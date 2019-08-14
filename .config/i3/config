@@ -176,16 +176,29 @@ bindsym $mod+slash		split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
-set $ws1 "一つ"
-set $ws2 "二つ"
-set $ws3 "三つ"
-set $ws4 "四つ"
-set $ws5 "五つ"
-set $ws6 "六つ"
-set $ws7 "七つ"
-set $ws8 "八つ"
-set $ws9 "九つ"
-set $ws10 "十"
+# Numbers
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Kanji (just for aesthetics)
+# set $ws1 "一つ"
+# set $ws2 "二つ"
+# set $ws3 "三つ"
+# set $ws4 "四つ"
+# set $ws5 "五つ"
+# set $ws6 "六つ"
+# set $ws7 "七つ"
+# set $ws8 "八つ"
+# set $ws9 "九つ"
+# set $ws10 "十"
 
 # switch to workspace
 bindsym $mod+Plus	workspace $ws1
