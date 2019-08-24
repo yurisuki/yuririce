@@ -1,0 +1,17 @@
+#!/bin/bash
+# This script will generate a image with QR code
+# using `qrencode` taking your output from clipboard.
+
+# Parse date into variable for later usage.
+date=$(date '+%y%m%d-%H%M-%S')
+# Put name inside variable.
+directoryandname="$HOME/qrcode-$date.png"
+
+# Make the QR image.
+! qrencode -s 20 "$(xclip -o)" -o $directoryandname && notify-send "❌ Couldn't create QR code." && exit
+
+# Send notification using `notify-send`.
+notify-send -i $directoryandname "✅ Created QR code."
+
+# Open the QR code.
+sxiv $directoryandname

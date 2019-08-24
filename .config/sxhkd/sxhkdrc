@@ -37,10 +37,10 @@ super + Scroll_Lock
 	killall screenkey || screenkey
 super + Insert
 	transl
+super + Delete
+	qrcode
 super + shift + Insert
 	showclip
-super + shift + alt + Insert
-	xcqr
 super + shift + x
 	prompt "Do you want to shutdown your computer?" "sudo -A shutdown -h now"
 super + shift + BackSpace
