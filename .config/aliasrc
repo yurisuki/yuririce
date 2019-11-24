@@ -26,7 +26,7 @@ alias ka="killall" \
 	yta="yt -x -f bestaudio/best" \
 	YT="youtube-viewer" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
-	upc="p -Syu --noconfirm --noedit; pkill -RTMIN+8 i3blocks" \
+	upc="p -Syu --noconfirm --noedit --ignore=\"$(cat ~/.preferences/pacmanx)\"; pkill -RTMIN+8 i3blocks" \
 	lsp="pacman -Qett --color=always | less" \
 	clr="clear" \
 	ffmpeg="ffmpeg -hide_banner" \
