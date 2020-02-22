@@ -8,7 +8,6 @@ interval=once
 signal=9
 
 [osudownload]
-label=⭕
 interval=once
 signal=12
 
@@ -23,7 +22,6 @@ interval=once
 signal=11
 
 [news]
-label=📰
 interval=once
 signal=6
 
@@ -45,12 +43,10 @@ label=📔
 interval=1800
 
 [mailbox]
-label=📬
 interval=180
 signal=12
 
 [background]
-label=🖼️
 interval=once
 signal=12
 
