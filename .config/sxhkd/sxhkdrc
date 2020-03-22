@@ -58,11 +58,11 @@ XF86AudioPrev
 XF86AudioStop
 	mpc toggle & sp toggle
 XF86AudioRaiseVolume
-	lmc up 5
+	vol +
 XF86AudioLowerVolume
-	lmc down 5
+	vol -
 XF86AudioMute
-	lmc mute
+	vol t
 XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
