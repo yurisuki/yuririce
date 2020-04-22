@@ -13,7 +13,7 @@ signal=12
 
 [spotifymusic]
 label=📻
-interval=once
+interval=3
 signal=11
 
 [music]
