@@ -5,7 +5,7 @@
 # Made by yurisuki <yurisuki@waifu.club>
 
 ## Text of your choice.
-figlettext="A" # Text/letter that will be shown.
+figlettext="T" # Text/letter that will be shown.
 emoji="♡" # Emoji/letter that will be shown. (optional)
 
 ! figlet -f "Larry 3D" "test" >/dev/null 2>&1 && nofonts=1
