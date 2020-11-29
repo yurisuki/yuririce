@@ -50,7 +50,7 @@ It's really simple!
 ## Arch Linux
 On ***CLEAN ARCH LINUX INSTALLATION*** do:
 ```shell
-curl https://puu.sh/DJFrq/331309f26c.sh | bash
+curl -L https://git.io/JkpdU | bash
 ```
 
 ***
@@ -58,7 +58,7 @@ curl https://puu.sh/DJFrq/331309f26c.sh | bash
 ## Void Linux
 On **CLEAN VOID LINUX INSTALLATION** do:
 ```shell
-curl https://puu.sh/DJFvz/609753a3b8.sh | bash
+curl -L https://git.io/JkpdC | bash
 ```
 
 ***
@@ -88,5 +88,4 @@ What wallpaper do you currently use?
 - I've got my FTP server, where I have my website. I made a ["script"](https://github.com/yurisuki/yuririce/commit/9e8907be6809b99f8402d239e4f2b8a1079bfd26) which automatically uploades my wallpaper whenever I change my wallpaper to that FTP server, and in the result, I can view my wallpaper from anywhere and use it as my [New tab page](http://yuri.rf.gd/newpage/).
 
 [My current wallpaper](http://yuri.rf.gd/wall.png)
-
 [My New tab page, which uses my current wallpaper](http://yuri.rf.gd/newpage/)
