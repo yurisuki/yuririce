@@ -27,9 +27,9 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_tmuxdd"] resize set 625 450
-for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_calcdd"] resize set 800 300
 for_window [instance="dropdown_tmuxdd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_calcdd"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 
@@ -114,7 +114,8 @@ bindsym $mod+Shift+o  		exec --no-startup-id i3resize right
 
 bindsym $mod+v			layout toggle stacking splith
 
-bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym $mod+a			exec --no-startup-id ddspawn calcdd -o font_size="15"
+
 
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
