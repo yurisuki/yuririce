@@ -34,7 +34,7 @@ signal=8
 interval=20
 signal=7
 
-[weather]
+[forecast]
 interval=3600
 signal=5
 
