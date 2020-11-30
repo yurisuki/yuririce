@@ -79,6 +79,7 @@ sed -i 's/chromium/firefox/g' ~/.profile
 # Replace "firefox" with any browser of your choice (that browser has to be installed) or leave "firefox" if you want firefox.
 ```
 # todo/goals
+- Get independent of Luke Smith's rice (shouldn't be that hard if I wasn't lazy that much as I'm right now)
 - Get rid of i3 (move to `bspwm` or `herbstluftwm`)
 
 You can also help me achieve my goals by contibuting to my GitHub repository by using pull requests and issues (if any bug occurs.)

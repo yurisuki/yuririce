@@ -15,10 +15,12 @@ checkifinstalled() { # This function will check if program is installed.
 }
 
 ## Remove the list, so we don't have mess in `dmenu`.
-rm "$programlist"
+[ -f "/tmp/tools" ] && rm "$programlist"
 
 ## The script will look up for these programs, I could potentially add some more, but I couldn't think about any at the moment.
 checkifinstalled gimp inkscape blender krita kdenlive
+
+touch $programlist
 
 ## Check if atleast 1 program is installed on machine.
 [ "$(wc -l < $programlist)" = "0" ] && notify-send "ℹ️ No tools are installed." && exit
