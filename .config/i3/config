@@ -6,7 +6,7 @@
 # <___'
 #
 #
-# 08/14/2019
+# 12/30/2020
 # Made by yurisuki <yurisuki@waifu.club>
 # NOTE: All additional scripts are started by `xorg`. You can edit them in `~/.xinitrc`.
 # NOTE: Most keybindings are set by `sxhkd`. You can edit them in `~/.config/sxhkd/sxhkdrc`
@@ -88,7 +88,7 @@ bindsym $mod+Escape		workspace prev
 bindsym $mod+Shift+Escape 	exec prompt "Do you want to exit?" "i3-msg exit"
 
 #STOP/HIDE EVERYTHING:
-bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; workspace lmao ; exec $term -e htop ; exec $term -e $FILE
+bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; workspace lmao ; exec $term -e gotop ; exec $term -e $FILE
 
 # Show selection:
 bindsym $mod+Shift+Insert	exec --no-startup-id showclip

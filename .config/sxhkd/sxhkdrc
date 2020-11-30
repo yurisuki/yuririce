@@ -18,7 +18,7 @@ super + shift + m
 super + n
 	$TERMINAL -e newsboat
 super + i
-	$TERMINAL -e htop
+	$TERMINAL -e gotop
 super + z
 	$TERMINAL -e calcurse -C ~/.config/calcurse
 super + shift + a
