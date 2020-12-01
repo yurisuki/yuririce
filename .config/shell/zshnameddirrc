@@ -1,0 +1,12 @@
+hash -d cac=/home/adam/.cache 
+hash -d cf=/home/adam/.config 
+hash -d D=/home/adam/Downloads 
+hash -d d=/home/adam/Documents 
+hash -d dt=/home/adam/.local/share 
+hash -d h=/home/adam 
+hash -d m=/home/adam/Music 
+hash -d mn=/mnt 
+hash -d pp=/home/adam/Pictures 
+hash -d sc=/home/adam/.local/bin 
+hash -d src=/home/adam/.local/src 
+hash -d vv=/home/adam/Videos 
