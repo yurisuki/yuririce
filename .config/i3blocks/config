@@ -7,14 +7,10 @@ command=cat /tmp/recordingicon
 interval=once
 signal=9
 
-[osudownload]
-interval=once
-signal=12
-
-[spotifymusic]
-label=📻
-interval=3
-signal=11
+#[spotifymusic]
+#label=📻
+#interval=3
+#signal=11
 
 [music]
 label=🎼
@@ -26,7 +22,6 @@ interval=once
 signal=6
 
 [pacpackages]
-label=📦
 interval=once
 signal=8
 
@@ -38,7 +33,7 @@ signal=7
 interval=3600
 signal=5
 
-[reminder]
+[remindcount]
 label=📔
 interval=1800
 
@@ -62,16 +57,7 @@ signal=12
 interval=once
 signal=10
 
-#[disk]
-#interval=60
-#command=disk /
-
-#[disk]
-#interval=60
-#command=disk /home 🏠
-
 [battery]
-command=battery BAT0
 interval=5
 
 [clock]
