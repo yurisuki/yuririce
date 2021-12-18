@@ -73,14 +73,13 @@ mv ~/.scripts/tools/remaps_ ~/.scripts/tools/remaps
 # Change locale to English
 sed -i 's/cs_CZ/en_US/g' ~/.bashrc
 ```
-You might change browser to something else, because you don't like Chromium
+You might change browser to something else, because you don't like Firefox
 ```
-sed -i 's/chromium/firefox/g' ~/.profile
-# Replace "firefox" with any browser of your choice (that browser has to be installed) or leave "firefox" if you want firefox.
+sed -i 's/firefox/chromium/g' ~/.profile
+# Replace "chromium" with any browser of your choice (that browser has to be installed) or leave "firefox" if you want firefox.
 ```
 # todo/goals
 - Get independent of Luke Smith's rice (shouldn't be that hard if I wasn't lazy that much as I'm right now)
-- Get rid of i3 (move to `bspwm` or `herbstluftwm`)
 
 You can also help me achieve my goals by contibuting to my GitHub repository by using pull requests and issues (if any bug occurs.)
 
