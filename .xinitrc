@@ -19,9 +19,6 @@ unclutter &
 # Optional script
 optional >/dev/null 2>&1 &
 
-# `remind` send notification if any notification exists
-remind --notify &
-
 # Keybindings
 sxhkd &
 

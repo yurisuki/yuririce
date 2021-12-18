@@ -7,6 +7,8 @@ super + d
 	dmenu_run -nf '#77A9BB' -nb '#0B0D22' -sb '#722E77' -sf '#EE61A7'
 super + r
 	$TERMINAL -e $FILE
+super + shift + r
+	thunar
 super + control + Return
 	$TERMINAL -e $EDITOR
 super + e
@@ -50,13 +52,13 @@ super + x
 XF86Launch1
 	xset dpms force off
 XF86AudioNext
-	mpc next & sp next
+	mpc next & playerctl next
 XF86AudioPlay
-	mpc toggle & sp play
+	mpc toggle & playerctl play-pause
 XF86AudioPrev
-	mpc prev & sp prev
+	mpc prev & playerctl previous
 XF86AudioStop
-	mpc toggle & sp toggle
+	mpc toggle & playerctl play-pause
 XF86AudioRaiseVolume
 	vol +
 XF86AudioLowerVolume

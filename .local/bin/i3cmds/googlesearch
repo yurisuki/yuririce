@@ -8,9 +8,9 @@ browser=${BROWSER:-firefox}
 
 pgrep -x dmenu && exit
 
-choice=$(echo "🍆" | dmenu -i -p "Search Google.com:") || exit 1
+choice=$(echo "Open google.com" | dmenu -i -p "Search Google.com:") || exit 1
 
-if [ "$choice" = "🍆"  ]; then
+if [ "$choice" = "Open google.com"  ]; then
     $browser "https://google.com"
 else
     # Detect if url

@@ -2,71 +2,49 @@ command=~/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-[record]
-command=cat /tmp/recordingicon
-interval=once
-signal=9
-
-#[spotifymusic]
-#label=📻
-#interval=3
+#[sb-music]
+#label=🎼
+#interval=once
 #signal=11
 
-[music]
-label=🎼
-interval=once
-signal=11
-
-[news]
+[sb-news]
 interval=once
 signal=6
 
-[pacpackages]
+[sb-pacpackages]
 interval=once
 signal=8
 
-[torrent]
+[sb-torrent]
 interval=20
 signal=7
 
-[forecast]
+[sb-forecast]
 interval=3600
 signal=5
 
-[remindcount]
-label=📔
-interval=1800
-
-[mailbox]
-interval=180
-signal=12
-
-[background]
-interval=once
-signal=12
-
-#[memory]
+#[sb-memory]
 #interval=30
 #label=🧠
 
-#[cpu]
+#[sb-cpu]
 #interval=15
 #label=💻
 
-[volume]
+[sb-volume]
 interval=once
 signal=10
 
-[battery]
+[sb-battery]
 interval=5
 
-[clock]
+[sb-clock]
 label=📅
 interval=30
 
-#[vpn]
+#[sb-vpn]
 #label=🍙
 #interval=10
 
-[internet]
+[sb-internet]
 interval=10

@@ -1,28 +1,18 @@
 #!/bin/sh
-# Give dmenu list of all unicode characters to copy.
-# Shows the selected character in dunst if running.
 
-# Must have xclip installed to even show menu.
-xclip -h >/dev/null 2>&1 || exit
+# The famous "get a menu of emojis to copy" script.
 
-if [ -e ~/.config/fontawesome ]; then
-    chosen=$(grep -v "#" -h ~/.config/emoji ~/.config/fontawesome | dmenu -i -l 20 -fn Monospace-18)
+# Get user selection via dmenu from emoji file.
+chosen=$(cut -d ';' -f1 ~/.local/share/larbs/emoji | dmenu -i -l 30 | sed "s/ .*//")
+
+# Exit if none chosen.
+[ -z "$chosen" ] && exit
+
+# If you run this command with an argument, it will automatically insert the
+# character. Otherwise, show a message that the emoji has been copied.
+if [ -n "$1" ]; then
+	xdotool type "$chosen"
 else
-    chosen=$(grep -v "#" ~/.config/emoji | dmenu -i -l 20 -fn Monospace-18)
+	printf "$chosen" | xclip -selection clipboard
+	notify-send "'$chosen' copied to clipboard." &
 fi
-
-[ "$chosen" != "" ] || exit
-
-case "$1" in
-	git) c=$(echo "$chosen" | sed "s/ .*//")
-	echo "$c" | tr -d '\n' >/tmp/gitemoji
-	exit ;;
-esac
-
-c=$(echo "$chosen" | sed "s/ .*//")
-echo "$c" | tr -d '\n' | xclip -selection clipboard
-notify-send "'$c' copied to clipboard." &
-
-s=$(echo "$chosen" | sed "s/.*; //" | awk '{print $1}')
-echo "$s" | tr -d '\n' | xclip
-notify-send "'$s' copied to primary." &
