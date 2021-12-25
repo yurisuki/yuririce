@@ -122,4 +122,4 @@ super + F11
 	googlesearch
 # Search with osu!
 super + F12
-	osusearch
+	ifinstalled osusearch && osusearch

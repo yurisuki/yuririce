@@ -2,8 +2,8 @@
 # This script will translate the selected text and copy it (translated) to clipboard or give you option to open the translated text in $EDITOR.
 
 # Must have xsel and xclip installed to continue.
-xsel -h >/dev/null && clear || exit
-xclip -h >/dev/null && clear || exit
+ifinstalled xsel
+ifinstalled xclip
 
 # Exit if nothing is selected.
 prim=$(xclip -o) ; [ -z "$prim" ] && exit
@@ -44,4 +44,3 @@ fi
 
 # Remove the mess that this script has made.
 rm /tmp/*transl
-
