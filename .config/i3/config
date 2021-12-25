@@ -6,7 +6,7 @@
 # <___'
 #
 #
-# 12/30/2020
+# 12/26/2021
 # Made by yurisuki <yurisuki@waifu.club>
 # NOTE: All additional scripts are started by `xorg`. You can edit them in `~/.xinitrc`.
 # NOTE: Most keybindings are set by `sxhkd`. You can edit them in `~/.config/sxhkd/sxhkdrc`
@@ -78,8 +78,6 @@ bar {
 }
 
 # #---Basic Bindings---# #
-bindsym $mod+shift+Return 	exec --no-startup-id samedir
-
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
 floating_modifier $mod

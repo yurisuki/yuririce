@@ -14,9 +14,9 @@ super + control + Return
 super + e
 	$TERMINAL -e neomutt
 super + m
-	Spotify
+	apple-music-electron
 super + shift + m
-	sp play && lmc mute
+	playerctl play-pause
 super + n
 	$TERMINAL -e newsboat
 super + i
