@@ -6,7 +6,7 @@
 # <___'
 #
 #
-# 12/26/2021
+# 12/27/2021
 # Made by yurisuki <yurisuki@waifu.club>
 # NOTE: All additional scripts are started by `xorg`. You can edit them in `~/.xinitrc`.
 # NOTE: Most keybindings are set by `sxhkd`. You can edit them in `~/.config/sxhkd/sxhkdrc`
@@ -26,11 +26,13 @@ for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_*"] move position center
 for_window [instance="dropdown_tmuxdd"] resize set 625 450
 for_window [instance="dropdown_calcdd"] resize set 800 300
+for_window [instance="dropdown_mixerdd"] resize set 750 400
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_calcdd"] border pixel 2
-for_window [instance="dropdown_*"] move position center
+for_window [instance="dropdown_mixerdd"] border pixel 2
 
 
 # Set Xresources colors
@@ -86,7 +88,7 @@ bindsym $mod+Escape		workspace prev
 bindsym $mod+Shift+Escape 	exec prompt "Do you want to exit?" "i3-msg exit"
 
 #STOP/HIDE EVERYTHING:
-bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; workspace lmao ; exec $term -e gotop ; exec $term -e $FILE
+bindsym $mod+Shift+Delete	exec --no-startup-id playerctl pause; exec --no-startup-id vol t; workspace lmao ; exec $term -e gotop ; exec $term -e $FILE
 
 # Show selection:
 bindsym $mod+Shift+Insert	exec --no-startup-id showclip
@@ -113,6 +115,7 @@ bindsym $mod+Shift+o  		exec --no-startup-id i3resize right
 bindsym $mod+v			layout toggle stacking splith
 
 bindsym $mod+a			exec --no-startup-id ddspawn calcdd -o font_size="15"
+bindsym $mod+Shift+a		exec --no-startup-id ddspawn mixerdd
 
 
 bindsym $mod+s			gaps inner current plus 5
@@ -224,17 +227,13 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [class="Pinentry"] sticky enable
 for_window [class="sent"] border pixel 0px
 for_window [class="Blender"] move to workspace $ws6
-for_window [class="kdenlive"] move to workspace $ws7
-for_window [class="Inkscape"] move to workspace $ws8
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 for_window [title="Default - Wine desktop"] floating enable
-for_window [title=pulsemixer] floating enable border pixel 3
-for_window [title=alsamixer] floating enable border pixel 3
+for_window [title="Picture-in-Picture"] sticky enable
 
 # Bindings to make the webcam float and stick.
 for_window [title="mpvfloat"] floating enable
