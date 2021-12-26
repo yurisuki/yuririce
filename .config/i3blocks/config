@@ -7,6 +7,11 @@ markup=pango
 #interval=once
 #signal=11
 
+#[sb-applemusic]
+#label=📻
+#interval=10
+#signal=11
+
 [sb-news]
 interval=once
 signal=6
