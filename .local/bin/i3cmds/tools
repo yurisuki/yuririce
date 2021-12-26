@@ -18,7 +18,7 @@ checkifinstalled() { # This function will check if program is installed.
 [ -f "/tmp/tools" ] && rm "$programlist"
 
 ## The script will look up for these programs, I could potentially add some more, but I couldn't think about any at the moment.
-checkifinstalled gimp inkscape blender krita kdenlive
+checkifinstalled gimp inkscape blender krita kdenlive atom
 
 touch $programlist
 
