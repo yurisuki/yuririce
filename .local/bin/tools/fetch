@@ -2,13 +2,13 @@
 # This script is trying to be like neofetch,
 # but written in bash and it's fast.
 #
-# Made by yurisuki <yurisuki@waifu.club>
+# Made by yurisuki <adam@adamnvrtil.fun>
 
 ## Text of your choice.
 figlettext="T" # Text/letter that will be shown.
-emoji="♡" # Emoji/letter that will be shown. (optional)
+emoji="❤️" # Emoji/letter that will be shown. (optional)
 
-! figlet -f "Larry 3D" "test" >/dev/null 2>&1 && nofonts=1
+! command -v figlet >/dev/null 2>&1 && nofonts=1
 
 ## Informations about your system.
 # Get the OS
