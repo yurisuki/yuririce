@@ -11,7 +11,7 @@ setbg refresh &
 dunst &
 
 # Composite manager
-compositor &
+#compositor &
 
 # Mouse invisibility
 unclutter &
