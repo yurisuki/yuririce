@@ -22,7 +22,8 @@ esac
 WM=$(tail -n 1 "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc" | awk '{print $2}')
 
 # Read package count
-PACKAGE_COUNT=$(cat "${XDG_DATA_HOME:-$HOME/.local/share}/packages")
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/packages" ] && PACKAGE_COUNT=$(cat "${XDG_DATA_HOME:-$HOME/.local/share}/packages") || \
+	PACKAGE_COUNT="Will be counted on new shell execution."
 
 ## Some aren't used by default.
 # System uptime
