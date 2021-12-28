@@ -8,7 +8,7 @@ cfx	${XDG_CONFIG_HOME:-$HOME}/.xinitrc			# This script is executed when xorg is 
 # These do not update automatically, but on the next new instance of a program:
 
 cfv	${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim		# vim/neovim config
-cfb	${XDG_CONFIG_HOME:-$HOME}/.bashrc			# bash (shell) config
+cfz	${XDG_CONFIG_HOME:-$HOME}/.zshrc			# zsh (shell) config
 cfa	${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc		# aliases used by bash
 cfp	${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile		# profile file for login settings for zsh
 cfk	${XDG_CONFIG_HOME:-$HOME/.config}/kitty/kitty.conf	# kitty (terminal) config
