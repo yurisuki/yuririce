@@ -5,7 +5,7 @@
 [ "$(xset q | grep Num | awk '{print $8}')" == "off" ] && xdotool key Num_Lock &
 
 # Set the background
-setbg refresh &
+setbg -r &
 
 # Start `dunst` for notifications
 dunst &
