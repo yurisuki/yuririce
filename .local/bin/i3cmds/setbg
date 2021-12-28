@@ -5,8 +5,7 @@
 # also used in terminal.
 
 badfile="This file type can't be used as a wallpaper."
-waldir="${HOME}/.config/wall.png"
-lockdir="${HOME}/.config/walllock.png"
+waldir="${XDG_DATA_HOME:-$HOME/.local/share}/setbg"
 
 echowrapper() {
 printf "$1\n"
@@ -20,20 +19,20 @@ help() { # This
 [ -z "$1" ] && help
 
 case "$1" in
-	--help) help ;;
+	--help|-h) help ;;
 	all) case "$2" in
-		*.png | *.jpg) wal -i "$2" && cp "$2" "$waldir" && betterlockscreen -u "$waldir" && wal -c ;;
+		*.png | *.jpg) wal -i "$2" && cp "$2" "$waldir/wall.png" && betterlockscreen -u "$waldir/wall.png" && wal -c ;;
 		*) echowrapper "$badfile" ;;
 	esac ;;
 	lock) case "$2" in
-		*.png | *.jpg) cp "$2" "$lockdir" && betterlockscreen -u "$lockdir" ;;
+		*.png | *.jpg) cp "$2" "$waldir/lock.png" && betterlockscreen -u "$waldir/lock.png" ;;
 		*) echowrapper "$badfile" ;;
 	esac ;;
 	wal) case "$2" in
-		*.png | *.jpg) wal -i "$2" && cp "$2" "$waldir" ;;
+		*.png | *.jpg) wal -i "$2" && cp "$2" "$waldir/wall.png" ;;
 		*) echowrapper "$badfile" ;;
 	esac ;;
-	refresh) ! [ -f "$waldir" ] && notify-send "$(printf "❌ wall.png doesn't exist.\\nWon't refresh a wallpaper.")" && echowrapper "$waldir doesn't exist."
+	refresh) ! [ -f "$waldir/wall.png" ] && notify-send "$(printf "❌ wall.png doesn't exist.\\nWon't refresh a wallpaper.")" && echowrapper "$waldir/wall.png doesn't exist."
 	wal -i "$waldir" >/dev/null & ;;
 	*) echowrapper "This argument doesn't exist. See avalible arguments by using $0 <--help>." ;;
 esac

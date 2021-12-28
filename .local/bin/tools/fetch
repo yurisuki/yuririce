@@ -19,10 +19,10 @@ case "$BASENAME" in
 esac
 
 # Get the WM
-WM=$(tail -n 1 "$HOME/.xinitrc" | awk '{print $2}')
+WM=$(tail -n 1 "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc" | awk '{print $2}')
 
 # Read package count
-PACKAGE_COUNT=$(cat "$HOME/.local/share/packages")
+PACKAGE_COUNT=$(cat "${XDG_DATA_HOME:-$HOME/.local/share}/packages")
 
 ## Some aren't used by default.
 # System uptime
