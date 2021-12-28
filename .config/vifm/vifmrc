@@ -31,9 +31,9 @@ map E :!$EDITOR %f<CR>
 map mkd :mkdir<space>
 
 " setbg
-map bw :!setbg all %f &<CR>
-map bl :!setbg lock %f &<CR>
-map bg :!setbg wal %f &<CR>
+map bw :!setbg -a %f &<CR>
+map bl :!setbg -l %f &<CR>
+map bg :!setbg -w %f &<CR>
 
 map X :!ext %f &<CR>
 map F8 :mkdir<space>
