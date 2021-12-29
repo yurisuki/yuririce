@@ -14,7 +14,7 @@ command -v wal >/dev/null 2>&1 && wallutility="wal" || printf "\`wal\` is not pr
 
 # Commands:
 checkextension() { case "$2" in
-	*.png|*.jpg) echo "File ok";;
+	*.png|*.jpg) ;;
 	*) printf "I don\'t know this file extension, please use only:\\n.png\\n.jpg\n" && exit 1 ;;
 esac ;}
 help() { printf "This script will set wallpaper in YARBS, it will set WM background, and lockscreen background.\\n\\nARGUMENTS:\\n--help/-h: shows this help message\\n--all/-a: changes wallpaper for both lockscreen and WM\\n--wall/-w: changes wallpaper for WM\\n--lock/-l: changes wallpaper for lockscreen\\n--refresh/-r: Refresh wallpaper\\n" ;}
