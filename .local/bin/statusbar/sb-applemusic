@@ -19,7 +19,8 @@ if [ $(playerctl status) = "Paused" ]; then
 fi
 
 # This one is being showed on the bar.
-echo -e "$pause$(artist) - $(track)$colouring"
+unfiltered="$pause$(artist) - $(track)$colouring" # We have to replace "&" for and, because i3bar has issues with displaying that symbol.
+echo -e "${unfiltered//[&]/and}"
 
 # Mouse buttons
 case $BLOCK_BUTTON in
