@@ -8,7 +8,9 @@ super + d
 super + r
 	$TERMINAL -e $FILE
 super + shift + r
-	thunar
+	$TERMINAL -e sudo $FILE -r ${HOME}/.config/ranger
+super + control + r
+	$GUIFILE
 super + control + Return
 	$TERMINAL -e $EDITOR
 super + e

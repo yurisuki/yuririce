@@ -9,7 +9,8 @@ export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 export READER="zathura"
-export FILE="vifm"
+export FILE="ranger"
+export GUIFILE="thunar"
 
 # ~/ Clean-up:
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
