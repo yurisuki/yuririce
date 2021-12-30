@@ -1,15 +1,13 @@
 #!/bin/sh
-# This is lockscreen script I use.
+# Lockscreen script - it does basically what's its name.
 
 # Kill the compositor, because notifications would otherwise show on the lockscreen.
 unset xcomp
 pgrep -u "$USER" xcompmgr>/dev/null && killall xcompmgr && xcomp=1
 
-# Pause music (mocp, mpd, send the pause key to all mpv videos and pause spotify music):
-mocp -P >/dev/null 2>&1 &
-mpc pause >/dev/null 2>&1 &
-pauseallmpv >/dev/null 2>&1 &
-sp pause >/dev/null 2>&1 &
+# Pause music/videos
+mpc pause
+playerctl pause
 
 ### Lock the screen
 betterlockscreen -l dimblur &
@@ -20,6 +18,4 @@ sleep 0.1 && xset dpms force off &
 wait
 
 # Open the compositor if it was killed by the lockscreen
-case "$xcomp" in
-	1) xcompmgr>/dev/null 2>&1
-esac
+[ "$xcomp" = "1" ] && xcompmgr >/dev/null 2>&1
