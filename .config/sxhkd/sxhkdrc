@@ -16,7 +16,7 @@ super + control + Return
 super + e
 	$TERMINAL -e neomutt
 super + m
-	apple-music-electron
+	ifinstalled apple-music-electron && apple-music-electron
 super + shift + m
 	playerctl play-pause
 super + n
