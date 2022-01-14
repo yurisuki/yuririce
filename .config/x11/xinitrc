@@ -10,9 +10,6 @@ setbg -r &
 # Start `dunst` for notifications
 dunst &
 
-# Composite manager
-compositor &
-
 # Mouse invisibility
 unclutter &
 
