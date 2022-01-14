@@ -1,0 +1,13 @@
+#!/bin/sh
+# This block displays airpods battery status.
+# Depends on `apodsmon`.
+! command -v apodsmon >/dev/null 2>&1 && exit 1
+! pgrep "apodsmon" >/dev/null 2>&1 && exit 1
+
+[ "$(cat /tmp/airpodsstatus)" = "L: NA R: NA C: NA" ] && exit 0
+
+case "$BLOCK_BUTTON" in
+	3) pgrep -x dunst >/dev/null && notify-send "🎧 AirPods module" "\- Shows AirPods battery status"
+esac
+
+tail -1 /tmp/airpodsstatus

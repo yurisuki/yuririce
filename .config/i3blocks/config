@@ -43,6 +43,10 @@ signal=10
 [sb-battery]
 interval=5
 
+#[sb-airpods]
+#label=🎧
+#interval=120
+
 [sb-clock]
 label=📅
 interval=30

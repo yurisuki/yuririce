@@ -16,9 +16,6 @@ compositor &
 # Mouse invisibility
 unclutter &
 
-# Optional script
-optional >/dev/null 2>&1 &
-
 # Keybindings
 sxhkd &
 
