@@ -72,7 +72,7 @@ XF86MonBrightnessUp
 # Recording
 # Take screenshot
 Print
-	maimpuush
+	maim "$HOME/$(date +'%m%d%Y-%r').png"
 # Pick screenshot type
 shift + Print
 	maimpick
