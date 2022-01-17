@@ -1,0 +1,9 @@
+- make my own vim script, i dont need all that stuff, that is in current config
+- preferences, remove them, theyre useless now
+- put screenshot somewhere else, so it doesnt take space
+- move emoji files (they're in .config), and i think .local is good dir for them.
+- use mpd for music thats on machine.
+- make some script for managing my dotfiles, currently i move all files that i edit to cloned git directory, thats taking my time uselessly.
+- scripts and i3blocks cleanup.
+
+as of 01/17/2022
