@@ -30,7 +30,7 @@ It's really simple!
 ## Arch Linux
 On ***CLEAN ARCH LINUX INSTALLATION*** do:
 ```shell
-curl -L adamnvrtil.fun/yarbs | bash
+curl -L adamnvrtil.fun/yarbs | sh
 ```
 
 ***
@@ -38,6 +38,6 @@ curl -L adamnvrtil.fun/yarbs | bash
 ## Void Linux
 On **CLEAN VOID LINUX INSTALLATION** do:
 ```shell
-curl -L adamnvrtil.fun/yarbsvoid | bash
+curl -L adamnvrtil.fun/yarbsvoid | sh
 ```
 You also update my dotfiles by running the script again.
