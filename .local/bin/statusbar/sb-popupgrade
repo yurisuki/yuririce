@@ -1,9 +1,0 @@
-#!/bin/sh
-
-printf "Beginning upgrade.\\n"
-
-trizen -Syu --noconfirm --noedit --ignore="$(cat ~/.preferences/pacmanx)"; pkill -RTMIN+8 i3blocks
-pkill -RTMIN+8 i3blocks
-
-printf "\\nUpgrade complete.\\nPress <Enter> to exit window.\\n\\n"
-read -r
