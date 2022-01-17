@@ -30,7 +30,7 @@ It's really simple!
 ## Arch Linux
 On ***CLEAN ARCH LINUX INSTALLATION*** do:
 ```shell
-curl -L https://git.io/JkpdU | bash
+curl -L adamnvrtil.fun/yarbs | bash
 ```
 
 ***
@@ -38,5 +38,6 @@ curl -L https://git.io/JkpdU | bash
 ## Void Linux
 On **CLEAN VOID LINUX INSTALLATION** do:
 ```shell
-curl -L https://git.io/JkpdC | bash
+curl -L adamnvrtil.fun/yarbsvoid | bash
 ```
+You also update my dotfiles by running the script again.
