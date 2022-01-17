@@ -7,6 +7,7 @@
 - scripts and i3blocks cleanup.
 - add uptime, and other system resources in fetch script
 - latex templates
+- firefox config in repo
 
 
 i would do this rn, but my time is limited unfortunentely.
