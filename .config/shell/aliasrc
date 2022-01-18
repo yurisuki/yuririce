@@ -50,7 +50,7 @@ alias \
 	YT="youtube-viewer" \
 	ref="shortcuts >/dev/null; source ~/.config/shell/shortcutrc" \
 	clip="xclip -selection clipboard" \
-	upc="p -Syu --noconfirm --noedit --ignore=\"$(cat ~/.preferences/pacmanx)\"; rb" \
+	upc="p -Syu --noconfirm --noedit; rb" \
 	lsp="pacman -Qett --color=always | less" \
 	clr="clear" \
 	ffmpeg="ffmpeg -hide_banner" \
