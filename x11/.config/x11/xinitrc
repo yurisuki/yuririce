@@ -1,0 +1,27 @@
+#!/bin/zsh
+# This script will execute scripts and execute WM.
+
+# NumLock
+[ "$(xset q | grep Num | awk '{print $8}')" == "off" ] && xdotool key Num_Lock &
+
+# Set the background
+setbg -r &
+
+# Start `dunst` for notifications
+dunst &
+
+# underscan
+xrandr --output HDMI-0 --set "underscan" on --set "underscan hborder" 30 --set "underscan vborder" 20
+
+# Mouse invisibility
+unclutter &
+
+# Optional script
+optional >/dev/null 2>&1 &
+
+blueman-applet &
+
+# Keybindings
+sxhkd &
+
+exec i3
