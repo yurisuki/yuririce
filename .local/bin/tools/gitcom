@@ -4,7 +4,7 @@
 #
 # TODO/WISH:
 # Add mood function (eg. $0 mood mad "i fucked up")
-emoji=$(grep -v "#\|flag:" <~/.config/gitemoji | shuf -n 1 | awk '{print $1}') # Grep random emoji from file.
+emoji=$(grep -v "#\|flag:" <~/.local/share/gitemoji | shuf -n 1 | awk '{print $1}') # Grep random emoji from file.
 
 [ -z "$1" ] && echo "You haven't written any commit message." && exit # Exit if no commit message was written.
 
