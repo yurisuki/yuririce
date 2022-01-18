@@ -2,4 +2,4 @@ you shouldn't be using this!!!
 im using this for my TV setup, this includes many scaling options.
 managing this with stow.
 
-`rm README && stow *`
+`rm -rf README firefox && stow *`
