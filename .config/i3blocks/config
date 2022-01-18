@@ -51,9 +51,5 @@ interval=5
 label=📅
 interval=30
 
-#[sb-vpn]
-#label=🍙
-#interval=10
-
 [sb-internet]
 interval=10
