@@ -19,8 +19,6 @@ unclutter &
 # Optional script
 optional >/dev/null 2>&1 &
 
-blueman-applet &
-
 # Keybindings
 sxhkd &
 
