@@ -1,0 +1,19 @@
+#!/bin/sh
+# This script will be your new fetch.
+#
+# Made by yurisuki <adam@adamnvrtil.fun>
+
+## Text of your choice
+text="T" # Text/letter that will be shown.
+emoji="❤️"  # Emoji/letter that will be shown. (optional)
+
+## Colours
+red="$(tput setaf 1)"
+grn="$(tput setaf 2)"
+yel="$(tput setaf 3)"
+blu="$(tput setaf 4)"
+mag="$(tput setaf 5)"
+cyn="$(tput setaf 6)"
+reset="$(tput setaf 7)"
+
+printf "$text ~ $emoji\nos ~ ${cyn}$(cat /etc/*release | grep PRETTY_NAME | awk -F'"' '{print $2}')\n${reset}sh ~ ${cyn}$SHELL\n${reset}kernel ~ ${cyn}$(uname -r)\n${reset}uptime ~ ${cyn}$(uptime -p | cut -d ' ' -f2-)\n${reset}"
