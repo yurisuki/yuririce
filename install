@@ -10,6 +10,9 @@ cd $HOME/.tv
 # Change branch to tv.
 git switch tv
 
+# Remove files, that shouldn't be stowed.
+rm install README
+
 # Stow all the files
 stow --target=$HOME *
 
