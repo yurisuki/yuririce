@@ -1,0 +1,16 @@
+#!/bin/sh
+# This script will install all TV dotfiles using `stow`.
+
+# This one will clone files inside .tv directory.
+git clone https://github.com/yurisuki/yuririce.git $HOME/.tv
+
+# `cd` in that directory
+cd $HOME/.tv
+
+# Change branch to tv.
+git switch tv
+
+# Stow all the files
+stow --target=$HOME *
+
+# You update dotfiles using `cd $HOME/.tv && git pull`.
