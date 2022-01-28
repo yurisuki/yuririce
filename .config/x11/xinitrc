@@ -13,7 +13,4 @@ dunst &
 # Mouse invisibility
 unclutter &
 
-# Keybindings
-sxhkd &
-
-exec i3
+exec bspwm
