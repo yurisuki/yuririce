@@ -1,0 +1,22 @@
+#!/bin/sh
+# This script will restart bspwm, and
+# refresh some other things.
+
+bspc wm -r # Restart `bspwm`
+
+bar() { # This will restart `polybar`, the statusbar.
+pkill polybar ; polybar default &
+}
+
+keybindings() { # This will restart `sxhkd`, the keybinding master.
+pkill sxhkd ; sxhkd &
+}
+
+notifications() { # This will refresh notifications daemon, `dunst`.
+pkill dunst ; dunst &
+}
+
+bar >/dev/null 2>&1
+keybindings >/dev/null 2>&1
+notifications >/dev/null 2>&1
+notify-send "🍚 bspwm has been restarted."

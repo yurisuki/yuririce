@@ -1,0 +1,8 @@
+#!/bin/sh
+! xdotool search --class ddmixer && kitty --class ddmixer pulsemixer &
+id=$(xdotool search --class ddmixer | head -1)
+
+if [ "$id" != "" ]
+ then
+  bspc node "$id" --flag hidden -f
+fi

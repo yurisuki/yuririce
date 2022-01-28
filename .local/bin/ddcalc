@@ -1,0 +1,8 @@
+#!/bin/sh
+! xdotool search --class ddcalc && kitty --class ddcalc calcdd &
+id=$(xdotool search --class ddcalc | head -1)
+
+if [ "$id" != "" ]
+ then
+  bspc node "$id" --flag hidden -f
+fi

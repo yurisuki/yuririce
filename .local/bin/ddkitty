@@ -1,0 +1,8 @@
+#!/bin/sh
+! xdotool search --class ddterm && kitty --class ddterm &
+id=$(xdotool search --class ddterm | head -1)
+
+if [ "$id" != "" ]
+ then
+  bspc node "$id" --flag hidden -f
+fi
