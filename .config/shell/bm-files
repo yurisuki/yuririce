@@ -22,3 +22,5 @@ cfB	${XDG_CONFIG_HOME:-$HOME/.config}/i3blocks/config	# i3blocks (those block on
 cfi 	${XDG_CONFIG_HOME:-$HOME/.config}/i3/config		# i3 (window manager) config
 cfs	${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd/sxhkdrc		# sxhkd (key handler) config
 cfr	${XDG_CONFIG_HOME:-$HOME/.config}/ranger/rc.conf	# ranger (file manager) config
+cfb	${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/bspwmrc		# bspwm (window manager) config
+cfP	${XDG_CONFIG_HOME:-$HOME/.config}/polybar/config	# polybar (statusbar) config
