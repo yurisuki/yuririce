@@ -19,7 +19,4 @@ unclutter &
 # Optional script
 optional >/dev/null 2>&1 &
 
-# Keybindings
-sxhkd &
-
-exec i3
+exec bspwm
