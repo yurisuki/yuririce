@@ -1,3 +1,44 @@
+# bspwm binds
+super + shift + Escape
+	prompt "Do you want to exit?" "bspc quit"
+super + F2
+	bspwmrestart
+super + {_,shift + }q
+    bspc node -{c,k}
+super + f
+	bspc node -t \~fullscreen
+super + shift + space
+	bspc node -t \~floating
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + {_,shift + }{Tab}
+	bspc {desktop,node} -f last
+super + g
+	bspc node -s biggest.window
+super + shift + c
+	bspc node -g sticky
+super + Escape
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+super + shift + y
+	bspc node @focused:/ -R 90
+super + shift + d
+	bspc config window_gap {0,15}
+super + shift + n
+	bspc node focused -t \~floating ; hover right
+super + shift + b
+	bspc node focused -t \~floating ; hover left
+super + t
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 # Basic binds
 super + Return
 	$TERMINAL
@@ -15,6 +56,12 @@ super + control + Return
 	$TERMINAL -e $EDITOR
 super + e
 	$TERMINAL -e neomutt
+super + u
+	ddkitty
+super + a
+	ddcalc
+super + shift + a
+	ddmixer
 super + m
 	ifinstalled apple-music-electron && apple-music-electron
 super + shift + m
@@ -25,8 +72,6 @@ super + i
 	$TERMINAL -e gotop
 super + z
 	$TERMINAL -e calcurse -C ~/.config/calcurse
-super + shift + c
-	camtoggle
 super + w
 	$TERMINAL -e nmtui
 super + shift + w
