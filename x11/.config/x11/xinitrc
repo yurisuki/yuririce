@@ -13,6 +13,9 @@ dunst &
 # underscan
 xrandr --output HDMI-0 --set "underscan" on --set "underscan hborder" 30 --set "underscan vborder" 20
 
+# dpi
+xrandr --dpi 150
+
 # Mouse invisibility
 unclutter &
 
