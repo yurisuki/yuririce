@@ -1,21 +1,14 @@
 #!/bin/sh
 # Lockscreen script - it does basically what's its name.
 
-# Kill the compositor, because notifications would otherwise show on the lockscreen.
-unset xcomp
-pgrep -u "$USER" xcompmgr>/dev/null && killall xcompmgr && xcomp=1
-
 # Pause music/videos
 mpc pause
 playerctl pause
 
 ### Lock the screen
-betterlockscreen -l dimblur &
+slock &
 
 # Dim screen
 sleep 0.1 && xset dpms force off &
 
 wait
-
-# Open the compositor if it was killed by the lockscreen
-[ "$xcomp" = "1" ] && xcompmgr >/dev/null 2>&1
