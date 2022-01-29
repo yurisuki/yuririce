@@ -18,7 +18,7 @@
  -  [installation](#installation)
 
 # introduction
-This rice is the one I use currently on [Arch Linux](https://www.archlinux.org/) and [Void Linux](https://voidlinux.org/), and it's highly dependant on [voidrice](https://github.com/LukeSmithxyz/voidrice) by [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) with huge modifications I made to make it comfy as much as possible.
+This rice is the one I use currently on [Arch Linux](https://www.archlinux.org/) and [Void Linux](https://voidlinux.org/), and it's highly (used to be) dependant on [voidrice](https://github.com/LukeSmithxyz/voidrice) by [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) with huge modifications I made to make it comfy as much as possible.
 
 # what does it look like?
 [![](screenshot.png)](http://adamnvrtil.fun/imgs/screenshot.png)

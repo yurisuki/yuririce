@@ -39,6 +39,7 @@ super + shift + b
 	bspc node focused -t \~floating ; hover left
 super + t
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
 # Basic binds
 super + Return
 	$TERMINAL
