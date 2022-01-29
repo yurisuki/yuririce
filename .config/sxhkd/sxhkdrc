@@ -21,6 +21,8 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 super + {_,shift + }{Tab}
 	bspc {desktop,node} -f last
 super + g
@@ -39,6 +41,12 @@ super + shift + b
 	bspc node focused -t \~floating ; hover left
 super + t
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+super + b
+	pgrep polybar && killall polybar && bspc config top_padding 24 || polybar default & bspc config top_padding 0
+super + shift + alt + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+super + shift + alt + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Basic binds
 super + Return
