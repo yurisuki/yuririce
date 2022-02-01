@@ -47,13 +47,13 @@ module-margin-right = 1
 
 font-0 = mono:pixelsize=16;1 ; tv
 font-1 = Inconsolata Nerd Font:size=8;1
-font-2 = Noto Color Emoji:scale=10:style=Regular;2
+font-2 = Noto Color Emoji:scale=8.5:style=Regular;2
 font-3 = Symbola:pixelsize=9;1
 
 
 modules-left = bspwm xwindow
 ;modules-center =
-modules-right = updates applemusic volume wlan battery date
+modules-right = updates applemusic forecast volume wlan battery date
 
 tray-position = right
 tray-padding = 0
@@ -65,11 +65,11 @@ wm-restack = bspwm
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
-[module/weather]
+[module/forecast]
 type = custom/script
 exec = sb-forecast
 interval = 5000
-;format-underline =
+format-underline = ${colors.blue}
 
 [module/updates]
 type = custom/script
@@ -110,7 +110,8 @@ label-urgent = %index%!
 label-urgent-background = ${colors.red}
 label-urgent-padding = 1
 
-label-empty = %index%
+label-empty =
+;label-empty = %index%
 label-empty-foreground = ${colors.lightgray}
 label-empty-padding = 1
 
