@@ -242,4 +242,4 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https:/
 
 # Default zoom level.
 # Type: Perc
-c.zoom.default = '150'
+c.zoom.default = '100'
