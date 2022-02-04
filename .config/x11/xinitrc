@@ -1,16 +1,4 @@
 #!/bin/zsh
-# This script will execute scripts and execute WM.
-
-# NumLock
-[ "$(xset q | grep Num | awk '{print $8}')" == "off" ] && xdotool key Num_Lock &
-
-# Set the background
-setbg -r &
-
-# Start `dunst` for notifications
-dunst &
-
-# Mouse invisibility
-unclutter &
+# This script will execute WM.
 
 exec bspwm

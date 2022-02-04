@@ -18,8 +18,6 @@ cfu	${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls		# RSS urls for newsboat
 cfmb	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/bindings	# ncmpcpp (music player) keybinds file
 cfmc	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/config	# ncmpcpp (music player) config
 cfX	${XDG_CONFIG_HOME:-$HOME/.config}/sxiv/exec/key-handler	# sxiv (image viewer) key/script handler
-cfB	${XDG_CONFIG_HOME:-$HOME/.config}/i3blocks/config	# i3blocks (those block on statusbar) config
-cfi 	${XDG_CONFIG_HOME:-$HOME/.config}/i3/config		# i3 (window manager) config
 cfs	${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd/sxhkdrc		# sxhkd (key handler) config
 cfr	${XDG_CONFIG_HOME:-$HOME/.config}/ranger/rc.conf	# ranger (file manager) config
 cfb	${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/bspwmrc		# bspwm (window manager) config
