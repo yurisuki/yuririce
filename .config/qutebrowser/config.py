@@ -242,4 +242,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https:/
 
 # Default zoom level.
 # Type: Perc
-c.zoom.default = '100'
+c.zoom.default = '100%'
+
+# Bindings for normal mode
+config.bind('e', 'spawn --userscript qr')
+config.bind('x', 'spawn --userscript view_in_mpv')

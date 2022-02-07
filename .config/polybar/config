@@ -52,7 +52,7 @@ font-3 = Symbola:pixelsize=9;1
 
 modules-left = bspwm xwindow
 ;modules-center =
-modules-right = updates applemusic volume wlan battery date
+modules-right = updates applemusic weather volume wlan battery date
 
 tray-position = right
 tray-padding = 0
@@ -68,7 +68,7 @@ scroll-down = bspwm-deskprev
 type = custom/script
 exec = sb-forecast
 interval = 5000
-;format-underline =
+format-underline = ${colors.blue}
 
 [module/updates]
 type = custom/script
