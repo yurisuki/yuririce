@@ -19,6 +19,7 @@ cfmb	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/bindings	# ncmpcpp (music player)
 cfmc	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/config	# ncmpcpp (music player) config
 cfX	${XDG_CONFIG_HOME:-$HOME/.config}/sxiv/exec/key-handler	# sxiv (image viewer) key/script handler
 cfs	${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd/sxhkdrc		# sxhkd (key handler) config
+cfq	${XDG_CONFIG_HOME:-$HOME/.config}/qutebrowser/config.py # qutebrowser config
 cfr	${XDG_CONFIG_HOME:-$HOME/.config}/ranger/rc.conf	# ranger (file manager) config
 cfb	${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/bspwmrc		# bspwm (window manager) config
 cfP	${XDG_CONFIG_HOME:-$HOME/.config}/polybar/config	# polybar (statusbar) config
