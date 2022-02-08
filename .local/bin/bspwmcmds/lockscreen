@@ -4,6 +4,7 @@
 # Pause music/videos
 mpc pause
 playerctl pause
+mpv pause
 
 ### Lock the screen
 slock &

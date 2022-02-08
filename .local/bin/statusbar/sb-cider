@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Check if `cider` is running, if not stop the script.
+pidof -x cider >/dev/null 2>&1 || exit
+
+# If no is playing, then close the script.
+playerctl metadata | grep NoTrack >/dev/null 2>&1 && exit
+
+# Some eval variables to make my work easier.
+metadata() { playerctl metadata ;} # This one shows metadata about song that's played.
+artist() { metadata | grep artist | sed -e 's/^.*artist//' | sed -e 's/^[ \t]*//' ;} # Grep only artist from metadata.
+track() { metadata | grep title | sed -e 's/^.*title//' | sed -e 's/^[ \t]*//' ;} # Grep only track from metadata.
+
+# If music is paused, make variable pause.
+if [ $(playerctl status) = "Paused" ]; then
+	pause="  "
+fi
+
+# This one is being showed on the bar.
+echo -e "$pause$(artist) - $(track)"
