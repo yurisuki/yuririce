@@ -72,7 +72,7 @@ super + a
 super + shift + a
 	ddmixer
 super + m
-	ifinstalled apple-music-electron && apple-music-electron
+	ifinstalled cider && cider
 super + shift + m
 	playerctl play-pause
 super + n
