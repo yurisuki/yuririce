@@ -17,7 +17,7 @@ checkextension() { case "$2" in
 	*) printf "I don\'t know this file extension, please use only:\\n.png\\n.jpg\n" && exit 1 ;;
 esac ;}
 help() { printf "This script will set wallpaper in YARBS, it will set WM background.\\n\\nARGUMENTS:\\n--help/-h: shows this help message\\n--refresh/-r: Refresh wallpaper\\n--wall/-w: set wallpaper.\\n" ;}
-wall() { $wallutility -i "$2" && cp "$2" "$wallsdirectory/wall.png" && $wallutility -c ;}
+wall() { $wallutility -i "$2" && cp "$2" "$wallsdirectory/wall.png" && $wallutility -c && bspwmrestart;}
 refresh() { ! [ -f "$wallsdirectory/wall.png" ] && \
 	notify-send "$(printf "❌ wall.png doesn\'t exist.\\nWon\'t refresh wallpaper.")" && printf "wall.png doesn\'t exist. Won\'t refresh wallpaper.\\n" \
 	|| wal -i "$wallsdirectory/wall.png" ;}
