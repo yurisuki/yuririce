@@ -19,6 +19,8 @@ super + ctrl + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{plus, ecaron, scaron, ccaron, rcaron, zcaron, yacute, aacute, iacute, eacute}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 super + alt + {Left,Down,Up,Right}

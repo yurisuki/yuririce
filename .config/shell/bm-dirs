@@ -12,3 +12,4 @@ sc  	$HOME/.local/bin
 s 	$HOME/.scripts
 src 	$HOME/.local/src
 vv  	${XDG_VIDEOS_DIR:-$HOME/Videos}
+G	$HOME/Git
