@@ -10,6 +10,9 @@
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
+# Import zoom file.
+import zoom
+
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
@@ -239,10 +242,6 @@ c.statusbar.position = 'bottom'
 # qutebrowser`.
 # Type: Dict
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https://wiki.archlinux.org/?search={}', 'g': 'https://google.com/search?q={}', 'yt': 'https://youtube.com/search?q={}', 'r': 'https://www.reddit.com/search/?q={}', 'w': 'http://cs.wikipedia.org/wiki/Special:Search?search={}'}
-
-# Default zoom level.
-# Type: Perc
-c.zoom.default = '100%'
 
 # Bindings for normal mode
 config.bind('e', 'spawn --userscript qr')
