@@ -1,5 +1,5 @@
-# Import `zoom.py`
-import zoom
+# Source `zoom.py`
+config.source('zoom.py')
 
 # Do(n't) load autoconfig
 config.load_autoconfig(False)
