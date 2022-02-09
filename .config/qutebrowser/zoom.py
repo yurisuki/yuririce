@@ -7,12 +7,12 @@ try:
     from qutebrowser import qutebrowser, app
     from qutebrowser.misc import ipc
 except ImportError:
-    print("error: qutebrowser missing.")
+    print("Error: `qutebrowser` is missing.")
     exit(1)
 
 
 def zoom():
-    """Send :set zoom.default ~value command to qutebrowsers ipc server."""
+    """Send :set zoom.default ~value command to qutebrowser's ipc server."""
     args = qutebrowser.get_argparser().parse_args()
     app.standarddir.init(args)
     socket = ipc._get_socketname(args.basedir)
