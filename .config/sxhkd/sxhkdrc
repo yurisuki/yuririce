@@ -22,7 +22,9 @@ super + {_,shift + }{1-9,0}
 super + {_,shift + }{plus, ecaron, scaron, ccaron, rcaron, zcaron, yacute, aacute, iacute, eacute}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 super + alt + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 super + {_,shift + }{Tab}
