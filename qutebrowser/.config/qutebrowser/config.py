@@ -238,8 +238,12 @@ c.statusbar.position = 'bottom'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https://wiki.archlinux.org/?search={}', 'g': 'https://google.com/search?q={}', 'yt': 'https://youtube.com/search?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https://wiki.archlinux.org/?search={}', 'g': 'https://google.com/search?q={}', 'yt': 'https://youtube.com/search?q={}', 'r': 'https://www.reddit.com/search/?q={}', 'w': 'http://cs.wikipedia.org/wiki/Special:Search?search={}'}
 
 # Default zoom level.
 # Type: Perc
 c.zoom.default = '150'
+
+# Bindings for normal mode
+config.bind('e', 'spawn --userscript qr')
+config.bind('x', 'spawn --userscript view_in_mpv')
