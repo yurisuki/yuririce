@@ -1,6 +1,9 @@
 # Source `zoom.py`
 config.source('zoom.py')
 
+# Source `qutewal.py`
+config.source('qutewal.py')
+
 # Do(n't) load autoconfig
 config.load_autoconfig(False)
 
