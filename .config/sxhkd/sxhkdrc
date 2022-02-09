@@ -17,9 +17,9 @@ super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
 super + {_,shift + }{plus, ecaron, scaron, ccaron, rcaron, zcaron, yacute, aacute, iacute, eacute}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 super + alt + {h,j,k,l}
     STEP=20; SELECTION={1,2,3,4}; \
