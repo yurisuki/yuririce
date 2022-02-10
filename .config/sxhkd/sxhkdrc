@@ -1,52 +1,69 @@
 # bspwm binds
+# Escape from bspwm
 super + shift + Escape
 	prompt "Do you want to exit?" "bspc quit"
-super + F2
-	bspwmrestart
+# Quit or kill program
 super + {_,shift + }q
     bspc node -{c,k}
+# Toggle fullscreen
 super + f
 	bspc node -t \~fullscreen
+# Toggle floating window
 super + shift + space
 	bspc node -t \~floating
+# Move to/move window
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
+# Preselection
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
+# Move to/go to different desktop
 super + {_,shift + }{plus, ecaron, scaron, ccaron, rcaron, zcaron, yacute, aacute, iacute, eacute}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+# Resize window
 super + alt + {h,j,k,l}
     STEP=20; SELECTION={1,2,3,4}; \
     bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
     bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 super + alt + {Left,Down,Up,Right}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
+# Get to the last desktop/last window
 super + {_,shift + }{Tab}
 	bspc {desktop,node} -f last
+# Make window the biggest one
 super + g
-	bspc node -s biggest.window
+	bspc node -s biggest.local
+# Make window sticky
 super + shift + c
 	bspc node -g sticky
+# Abort preseletion
 super + Escape
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+super + t
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# Rotate layout
 super + shift + y
 	bspc node @focused:/ -R 90
+# Toggle gaps
 super + shift + d
 	bspc config window_gap {0,15}
+# Make window floating
 super + shift + n
 	bspc node focused -t \~floating ; hover right
 super + shift + b
 	bspc node focused -t \~floating ; hover left
-super + t
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# Toggle polybar
 super + b
 	pgrep polybar && killall polybar && bspc config top_padding 24 || polybar default & bspc config top_padding 0
+# Move a floating window
 super + shift + alt + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 super + shift + alt + {h,j,k,l}
@@ -91,6 +108,8 @@ super + shift + w
 	$BROWSER
 super + shift + g
 	tools
+super + c
+	cabl
 
 # Et cetera...
 super + Scroll_Lock
@@ -140,15 +159,14 @@ super + Print
 # kill active recording
 super + Delete
 	dmenurecord kill
-# toggle compositor
-shift+Scroll_Lock
-	compositor toggle
 
 # Function keys
 # Show readme
 super + F1
 	notify-send -i ~/.scripts/yuririce.png "The documentation doesn't exist. (yet)"
-# F2 is restart in i3 right now.
+# Restart bspwm
+super + F2
+	bspwmrestart
 # Change display
 super + F3
 	displayselect
@@ -157,9 +175,6 @@ super + F4
 	prompt 'Do you want to hibernate computer?' 'sudo systemctl suspend'
 # Restart/rescan wifi/eth networks
 super + F5
-# Toggle VPN
-super + shift + F5
-	vpntog
 # Start torrent daemon/open interface
 super + F6
 	torwrap
