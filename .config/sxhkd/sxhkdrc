@@ -54,7 +54,7 @@ super + shift + y
 	bspc node @focused:/ -R 90
 # Toggle gaps
 super + shift + d
-	bspc config window_gap {0,15}
+	bspc config -d focused window_gap {0,15}
 # Make window floating
 super + shift + n
 	bspc node focused -t \~floating ; hover right
