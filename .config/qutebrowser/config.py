@@ -17,7 +17,7 @@ c.input.insert_mode.leave_on_load = True
 #c.spellcheck.languages = ['cs-CZ']
 
 # Search engines
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https://wiki.archlinux.org/?search={}', 'g': 'https://google.com/search?q={}', 'yt': 'https://youtube.com/search?q={}', 'r': 'https://www.reddit.com/search/?q={}', 'w': 'http://cs.wikipedia.org/wiki/Special:Search?search={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https://wiki.archlinux.org/?search={}', 'g': 'https://google.com/search?q={}', 'yt': 'https://youtube.com/search?q={}', 'r': 'https://www.reddit.com/search/?q={}', 'w': 'http://cs.wikipedia.org/wiki/Special:Search?search={}', 'osm': 'https://www.openstreetmap.org/search?query={}'}
 
 # Bind userscripts
 config.bind('e', 'spawn --userscript qr')
