@@ -103,7 +103,7 @@ super + i
 super + z
 	$TERMINAL -e calcurse -C ~/.config/calcurse
 super + w
-	$TERMINAL -e nmtui
+	$TERMINAL -e sudo nmtui
 super + shift + w
 	$BROWSER
 super + shift + g
