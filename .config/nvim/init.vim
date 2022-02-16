@@ -1,8 +1,8 @@
-"                   _           _    _ _             _
-"  _   _ _   _ _ __(_)___ _   _| | _(_| )___  __   _(_)_ __ ___
-" | | | | | | | '__| / __| | | | |/ / |// __| \ \ / / | '_ ` _ \
-" | |_| | |_| | |  | \__ \ |_| |   <| | \__ \  \ V /| | | | | | |
-"  \__, |\__,_|_|  |_|___/\__,_|_|\_\_| |___/   \_/ |_|_| |_| |_|
+"                   _ _                             _
+"  _   _ _   _ _ __(_| )___   _ __   ___  _____   _(_)_ __ ___
+" | | | | | | | '__| |// __| | '_ \ / _ \/ _ \ \ / / | '_ ` _ \
+" | |_| | |_| | |  | | \__ \ | | | |  __/ (_) \ V /| | | | | | |
+"  \__, |\__,_|_|  |_| |___/ |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 "  |___/
 
 " Bind leader
@@ -48,6 +48,7 @@ call plug#end()
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+	colorscheme pywal
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -67,6 +68,8 @@ call plug#end()
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 " Automatically run shortcuts, when you edit shortcuts file.
 	autocmd BufWritePost bm-files,bm-dirs !shortcuts
+" Automatically deletes all mess that LaTeX makes
+	autocmd BufWinLeave *.tex !texclear "%"
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
 	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
@@ -75,13 +78,16 @@ call plug#end()
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=cs_cz<CR>
+	map <leader>o :setlocal spell! spelllang=cs_CZ<CR>
 " Nerd tree
 	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     if has('nvim')
         let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
     else
+        let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
+    endif
+
 " Function for toggling the bottom statusbar:
 let s:hidden_all = 1
 function! ToggleHiddenAll()
