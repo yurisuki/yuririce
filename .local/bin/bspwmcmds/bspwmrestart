@@ -9,7 +9,7 @@ pkill polybar ; polybar default &
 }
 
 keybindings() { # This will restart `sxhkd`, the keybinding master.
-pkill sxhkd ; sxhkd &
+pkill sxhkd && sleep 3 && sxhkd &
 }
 
 notifications() { # This will refresh notifications daemon, `dunst`.
