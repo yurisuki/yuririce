@@ -110,6 +110,8 @@ super + shift + g
 	tools
 super + c
 	cabl
+super + p
+	texcompile --last
 
 # Et cetera...
 super + Scroll_Lock

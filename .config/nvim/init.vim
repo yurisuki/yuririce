@@ -68,6 +68,8 @@ call plug#end()
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 " Automatically run shortcuts, when you edit shortcuts file.
 	autocmd BufWritePost bm-files,bm-dirs !shortcuts
+" Automatically run texcompile, when you edit *.tex file.
+	autocmd BufWritePost *.tex !texcompile "%"
 " Automatically deletes all mess that LaTeX makes
 	autocmd BufWinLeave *.tex !texclear "%"
 " Run xrdb whenever Xdefaults or Xresources are updated.

@@ -1,0 +1,33 @@
+#!/bin/sh
+# This script will compile LaTeX every time you save a file in neovim.
+# And will make you be able to open your pdf viewer by using keystroke. (Will open last compiled document.)
+
+
+## Functions
+help(){ # Function which will show help.
+printf "This script will compile LaTeX every time you save a file in neovim.\nAnd will make you be able to open your pdf viewer by using keystroke. (Will open last compiled document.)\nARGUMENTS:\n----------\n-h|--help: shows this message\n-l|--last: opens last compiled .tex file in your pdf viewer.\n"
+exit 0
+}
+
+faillastcompiled(){
+printf "No file compiled.\n" && notify-send "No file compiled." && exit 1
+}
+
+openlastcompiled(){ # Function which will open last compiled document.
+lastcompiled=$(cat /tmp/lastcompiled) || faillastcompiled
+printf "Opening last compiled document.\n"
+zathura "$lastcompiled" >/dev/null 2>&1 &
+exit 0
+}
+
+case "$1" in
+	-l|--last) openlastcompiled ;;
+	-h|--help) help ;;
+esac
+
+[ -z "$1" ] && printf "No file inputed.\n" && exit 1
+
+pdflatex "$1" || exit 1
+
+noextension=$(echo $1 | awk -F"." '{print $1}')
+echo "$noextension.pdf" > /tmp/lastcompiled
