@@ -1,0 +1,4 @@
+#!/bin/sh
+# Open editor directly.
+
+$TERMINAL -e $EDITOR "$@"

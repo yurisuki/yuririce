@@ -22,3 +22,9 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'wa': 'https:/
 # Bind userscripts
 config.bind('e', 'spawn --userscript qr')
 config.bind('x', 'spawn --userscript view_in_mpv')
+
+# Default editor
+c.editor.command = ['editor', '{file}']
+
+# Bind editor
+config.bind('z', 'edit-text')
