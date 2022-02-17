@@ -99,7 +99,7 @@ super + shift + m
 super + n
 	$TERMINAL -e newsboat
 super + i
-	$TERMINAL -e gotop
+	$TERMINAL -e btop
 super + z
 	$TERMINAL -e calcurse -C ~/.config/calcurse
 super + w
