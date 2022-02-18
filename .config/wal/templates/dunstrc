@@ -10,7 +10,7 @@
     padding = 0
     horizontal_padding = 8
     frame_width = 3
-    frame_color = "#0b0909"
+    frame_color = "{background}"
 
     # Define a color for the separator.
     # possible values are:
@@ -43,7 +43,7 @@
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/qutebrower
+    browser = /usr/bin/qutebrowser
 
 [shortcuts]
     close = ctrl+space
@@ -52,13 +52,13 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#0b0909"
-    foreground = "#de9b99"
+    background = "{background}"
+    foreground = "{foreground}"
 
 [urgency_normal]
-    background = "#4F282E"
-    foreground = "#de9b99"
+    background = "{color9}"
+    foreground = "{foreground}"
 
 [urgency_critical]
-    background = "#6C3035"
-    foreground = "#de9b99"
+    background = "{color10}"
+    foreground = "{foreground}"
