@@ -35,7 +35,7 @@ alias \
 	Sv="sudo $EDITOR" \
 	f="$FILE" \
 	g="git" \
-	gcom="gcom" \
+	gcom="gitcom" \
 	trem="transmission-remote" \
 	e="$EDITOR" \
 	v="$EDITOR" \
