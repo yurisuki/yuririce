@@ -4,7 +4,7 @@
 pidof -x cider >/dev/null 2>&1 || exit
 
 # If no is playing, then close the script.
-playerctl metadata | grep NoTrack >/dev/null 2>&1 && exit
+playerctl metadata >/dev/null 2>&1 || exit
 
 # Some eval variables to make my work easier.
 metadata() { playerctl metadata ;} # This one shows metadata about song that's played.
