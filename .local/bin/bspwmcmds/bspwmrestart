@@ -15,7 +15,7 @@ pkill sxhkd && sleep 3 && sxhkd &
 notifications() { # This will refresh notifications daemon, `dunst`.
 rm "$HOME/.config/dunst/dunstrc"
 cp $HOME/.cache/wal/dunstrc $HOME/.config/dunst/dunstrc
-pkill dunst ; dunst &
+pkill dunst && sleep 3 && dunst &
 }
 
 bar >/dev/null 2>&1
