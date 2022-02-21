@@ -4,7 +4,7 @@
 templatesdirectory="$HOME/Dropbox/Templates" # Here you specify your directory with templates ($HOME/Templates by default).
 
 openwithdmenu(){ # Open dmenu.
-template="$(ls $templatesdirectory | dmenu -p "Which template should be copied?" -i -l 15)"
+template="$(ls "$templatesdirectory" | dmenu -p "Which template should be copied?" -i -l 15)"
 }
 
 case "$1" in
@@ -22,4 +22,4 @@ set template=$1
 ! [ -f "$templatesdirectory/$template" ] && echo "This template doesn't exist!" && exit 1
 
 # Copy process
-cp $templatesdirectory/$template .
+cp "$templatesdirectory/$template" .
