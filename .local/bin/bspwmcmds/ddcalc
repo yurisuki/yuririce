@@ -1,5 +1,5 @@
 #!/bin/sh
-! xdotool search --class ddcalc && kitty --class ddcalc calcdd &
+! xdotool search --class ddcalc && kitty --class ddcalc -o font_size=25 calcdd &
 id=$(xdotool search --class ddcalc | head -1)
 
 if [ "$id" != "" ]
