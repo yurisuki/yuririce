@@ -1,0 +1,19 @@
+#!/bin/sh
+# Will connect to already paired BT device.
+
+### Functions
+connect() { # This function will connect to a device.
+	echo 'power on'     | bluetoothctl
+	echo "default-agent"| bluetoothctl
+	echo "connect $mac" | bluetoothctl
+}
+
+### Variables
+# Open `dmenu`, and make $decision from the decision there.
+decision=$(echo "devices" | bluetoothctl | grep "^Device" | cut -d ' ' -f3- | dmenu -p "Choose a device to connect:") || exit 1
+
+# Then get mac address from $decision.
+mac=$(echo "devices" | bluetoothctl | grep "^Device" | grep -w "$decision" | cut -d ' ' -f2 | sed -n "1p")
+
+# Connect.
+connect
