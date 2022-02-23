@@ -13,6 +13,7 @@ cfa	${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc			# aliases used by bash
 cfp	${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile			# profile file for login settings for zsh
 cfk	${XDG_CONFIG_HOME:-$HOME/.config}/kitty/kitty.conf		# kitty (terminal) config
 cfm	${XDG_CONFIG_HOME:-$HOME/.config}/mutt/muttrc			# mutt (email client) config
+cfZ	${XDG_CONFIG_HOME:-$HOME/.config}/zathura/zathurarc		# zathura (pdf viewer) config
 cfn	${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config		# newsboat (RSS reader)
 cfu	${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls			# RSS urls for newsboat
 cfmb	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/bindings		# ncmpcpp (music player) keybinds file
