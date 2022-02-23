@@ -1,11 +1,17 @@
 #!/bin/sh
 # Will connect to already paired BT device.
 
+
 ### Functions
+notrunning() {
+notify-send "❌ Bluetooth daemon is not running, because $@"
+exit 1
+}
+
 connect() { # This function will connect to a device.
-	echo 'power on'     | bluetoothctl
-	echo "default-agent"| bluetoothctl
-	echo "connect $mac" | bluetoothctl
+	bluetoothctl power on || notrunning "I couldn't power on bluetooth."
+	bluetoothctl default-agent
+	bluetoothctl connect $mac || notrunning "I couldn't connect to a device."
 }
 
 ### Variables
@@ -14,6 +20,9 @@ decision=$(echo "devices" | bluetoothctl | grep "^Device" | cut -d ' ' -f3- | dm
 
 # Then get mac address from $decision.
 mac=$(echo "devices" | bluetoothctl | grep "^Device" | grep -w "$decision" | cut -d ' ' -f2 | sed -n "1p")
+
+# Check if bluetooth daemon is running.
+pgrep -x bluetoothd || notrunning "daemon isn't running."
 
 # Connect.
 connect
