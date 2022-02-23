@@ -4,7 +4,7 @@
 
 ### Functions
 notrunning() {
-notify-send "❌ Bluetooth daemon is not running, because $@"
+notify-send "❌ I couldn't connect, because $@"
 exit 1
 }
 
