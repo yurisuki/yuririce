@@ -76,6 +76,8 @@ super + KP_Enter
 	$TERMINAL
 super + d
 	dmenu_run
+alt + space
+	dmenu_run
 super + r
 	$TERMINAL -e $FILE
 super + shift + r
