@@ -1,4 +1,3 @@
-
 # This file includes all the aliases used in YARBS
 # An explanation: \ - backslash is used, so it makes much easier than writing `alias` everytime you'd like to use it.
 # example="echo Example" - command `example` will execute `echo Example`, thus output will be `Example`.
@@ -46,7 +45,7 @@ alias \
 	gua="git remote | xargs -L1 git push --all" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
-	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yt="yt-dlp --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
 	yta="yt -x -f bestaudio/best" \
 	YT="youtube-viewer" \
 	ref="shortcuts >/dev/null; source ~/.config/shell/shortcutrc" \
