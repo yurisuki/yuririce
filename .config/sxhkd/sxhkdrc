@@ -110,12 +110,14 @@ super + shift + w
 	$BROWSER
 super + control + w
 	dmenubt
-	$TERMINAL -e super + shift + g
+super + shift + g
 	tools
 super + c
 	cabl
 super + p
 	texcompile --last
+#super + shift + p
+#	printpage
 
 # Et cetera...
 super + Scroll_Lock
@@ -167,9 +169,6 @@ super + Delete
 	dmenurecord kill
 
 # Function keys
-# Show readme
-super + F1
-	notify-send -i ~/.scripts/yuririce.png "The documentation doesn't exist. (yet)"
 # Restart bspwm
 super + F2
 	bspwmrestart
