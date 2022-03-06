@@ -7,7 +7,7 @@ browser=${BROWSER:-firefox}
 
 pgrep -x dmenu && exit
 
-if whereami -h >/dev/null 2>&1; then
+if command -v whereami >/dev/null 2>&1; then
 	location=$(whereami -r | grep city | awk -F: '{ print $2 }' | awk -F'"' '{ print $2 }')
 	locationdisplay="echo -e $location\nOpen idos.idnes.cz"
 else
