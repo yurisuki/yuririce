@@ -1,0 +1,8 @@
+#!/bin/sh
+# This script will print webpage to pdf, and then it will open it in $READER.
+
+URL=""
+
+wkhtmltopdf "$URL" /tmp/webpage >/dev/null 2>&1 || exit 1
+
+$READER /tmp/webpage
