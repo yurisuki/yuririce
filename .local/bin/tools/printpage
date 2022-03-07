@@ -1,8 +1,22 @@
 #!/bin/sh
 # This script will print webpage to pdf, and then it will open it in $READER.
 
+# Change your URL there.
 URL=""
 
-wkhtmltopdf "$URL" /tmp/webpage >/dev/null 2>&1 || exit 1
+# Send notification "Checking internet connection...".
+notify-send -t 1500 "Checking internet connection..."
 
-$READER /tmp/webpage
+# Check if internet connection is present, then decide what to do.
+if ping -c 1 "google.com" >/dev/null 2>&1; then
+	# Send notification, that the parsing process has started.
+	notify-send -t 1500 "Parsing html to pdf..."
+	# Parse html to pdf (if internet connection is present).
+	wkhtmltopdf "$URL" /tmp/webpage >/dev/null 2>&1 || exit 1
+	$READER /tmp/webpage
+else
+	# Send notification, that internet connection is not present.
+	notify-send "Internet connection is not present."
+	# If parsed file exists locally, then open it, otherwise send a notification and exit.
+	[ -f "/tmp/webpage" ] && $READER /tmp/webpage || notify-send "Internet connection not present."
+fi
