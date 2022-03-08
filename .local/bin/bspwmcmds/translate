@@ -1,0 +1,36 @@
+#!/bin/sh
+# This script will translate currently selected text and it will translate to system's language.
+# WARNING: Uses Google api (might spoof on you)
+
+# Check if dependencies are present on machine.
+ifinstalled xsel # Sees currently selected text.
+ifinstalled xclip # Can parse translated text in clipboard.
+
+# Functions
+nothingselected() { # Will be executed if no text is currently selected.
+notify-send "No text is selected."
+printf "No text is selected.\n"
+
+exit 1
+}
+
+wgetfailed() { # Will be executed if `wget` fails.
+notify-send "Translate failed.\nMaybe try checking internet connection."
+printf "Translate failed.\nMaybe try checking internet connection.\n"
+
+exit 1
+}
+
+# Kill the script if nothing is selected.
+xclip -o || nothingselected
+
+# Get system locale, so we know in what language we should translate.
+language=$(echo $LANG | cut -c 1-2)
+
+# Send notification, and start the translate (I'd use `curl`, but it's slower.).
+notify-send -t 1500 "Translating..."
+translated=$(wget -U "Mozilla/5.0" -qO - "http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$language&dt=t&q=$(xclip -o)" | awk -F'"' '{print $2, $10}') || wgetfailed
+
+# Send results using `notify-send`.
+notify-send "🕮 $(xclip -o) $language"
+notify-send "🕮 $translated"

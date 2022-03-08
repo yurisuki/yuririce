@@ -123,7 +123,7 @@ super + p
 super + Scroll_Lock
 	killall screenkey || screenkey
 super + Insert
-	transl
+	translate
 super + Delete
 	qrcode
 super + shift + Insert
