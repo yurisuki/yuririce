@@ -2,7 +2,7 @@
 # This script will print webpage to pdf, and then it will open it in $READER.
 
 # Change your URL there.
-URL=""
+URL="https://bakalari.isste.cz/bakaweb/Timetable/Public/Actual/Class/14"
 
 # Send notification "Checking internet connection...".
 notify-send -t 1500 "Checking internet connection..."
@@ -18,5 +18,5 @@ else
 	# Send notification, that internet connection is not present.
 	notify-send "Internet connection is not present."
 	# If parsed file exists locally, then open it, otherwise send a notification and exit.
-	[ -f "/tmp/webpage" ] && $READER /tmp/webpage || notify-send "Internet connection not present."
+	[ -f "/tmp/webpage" ] && $READER /tmp/webpage || exit 1
 fi
