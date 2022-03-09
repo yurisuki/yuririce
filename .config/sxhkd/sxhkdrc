@@ -182,6 +182,7 @@ super + F4
 	prompt 'Do you want to hibernate computer?' 'sudo systemctl suspend'
 # Restart/rescan wifi/eth networks
 super + F5
+	sudo systemctl restart NetworkManager
 # Start torrent daemon/open interface
 super + F6
 	torwrap
