@@ -124,6 +124,8 @@ super + Scroll_Lock
 	killall screenkey || screenkey
 super + Insert
 	translate
+super + parenright
+	dmenuunicode
 super + Delete
 	qrcode
 super + shift + Insert
