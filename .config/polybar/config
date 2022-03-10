@@ -123,7 +123,7 @@ label-connected = %essid%
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
-label-disconnected = 睊no wifi
+label-disconnected = 睊 no wifi
 label-disconnected-foreground = ${colors.gray}
 
 ; <ramp-signal>
