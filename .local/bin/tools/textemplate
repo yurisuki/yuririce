@@ -1,25 +1,35 @@
 #!/bin/sh
 # Use TeX template
 
+curdir="$(pwd)" # Includes current dir, later used for copying.
 templatesdirectory="$HOME/Dropbox/Templates" # Here you specify your directory with templates ($HOME/Templates by default).
 
-openwithdmenu(){ # Open dmenu.
-template="$(ls "$templatesdirectory" | dmenu -p "Which template should be copied?" -i -l 15)"
+openwithfzf(){ # Open fzf.
+	clear
+template="$(fzf \
+	--header="Which template should be copied?" \
+	--border rounded)" || \
+	exit 1
 }
+
+cd "$templatesdirectory"
 
 case "$1" in
 	--list|-l) printf "Templates in $templatesdirectory: " && ls $templatesdirectory && exit 0 ;;
-	--dmenu|-d) openwithdmenu ;;
-	--*|-*) printf "This tool will copy a template for you in current directory, it takes templates from your desired directory.\nUsage:\n--list|-l: Shows templates in desired directory\n--help|-h: Will show this message.\n" && exit 0 ;;
+	--fzf|-f) openwithfzf ;;
+	--*|-*) printf "This tool will copy a template for you in current directory, it takes templates from your desired directory.\nUsage:\n--list|-l: Shows templates in desired directory\n--fzf|-f: Will show \`fzf\`\n--help|-h: Will show this message.\n" && exit 0 ;;
 esac
 
 set template=$1
 
 # Check if $templates directory exists.
-! [ -d "$templatesdirectory" ] && echo "Directory $templatesdirectory doesn't exist. Make sure you changed it, or created one." && exit 1
+! [ -d "$templatesdirectory" ] && echo "Directory $templatesdirectory doesn't exist. Make sure you changed it, or created one." && sleep 3 && exit 1
 
 # Check if file exists.
-! [ -f "$templatesdirectory/$template" ] && echo "This template doesn't exist!" && exit 1
+! [ -f "$templatesdirectory/$template" ] && echo "This template doesn't exist!" && sleep 3 && exit 1
+
+# Get to the directory from where this script has been executed.
+cd "$curdir"
 
 # Copy process
 cp "$templatesdirectory/$template" .
