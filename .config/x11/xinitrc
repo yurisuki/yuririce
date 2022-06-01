@@ -1,4 +1,7 @@
 #!/bin/zsh
 # This script will execute WM.
 
+# Dropdown terminal
+qterminal -d &
+
 exec bspwm
