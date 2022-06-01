@@ -88,6 +88,8 @@ super + control + Return
 	$TERMINAL -e $EDITOR
 super + e
 	$TERMINAL -e neomutt
+super + shift + e
+	$EMAIL
 super + u
 	ddkitty
 super + a
@@ -116,8 +118,8 @@ super + c
 	cabl
 super + p
 	texcompile --last
-#super + shift + p
-#	printpage
+super + shift + p
+	printpage
 
 # Et cetera...
 super + Scroll_Lock
