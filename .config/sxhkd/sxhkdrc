@@ -90,8 +90,8 @@ super + e
 	$TERMINAL -e neomutt
 super + shift + e
 	$EMAIL
-#super + u
-#	ddkitty
+super + u
+	ddkitty
 super + a
 	ddcalc
 super + shift + a
