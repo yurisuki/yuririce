@@ -43,6 +43,7 @@ call plug#end()
 	set clipboard+=unnamedplus
 	set noshowmode
 	set noruler
+	set cursorline
 	set laststatus=0
 	set noshowcmd
 	nnoremap c "_c
@@ -52,6 +53,7 @@ call plug#end()
 	set encoding=utf-8
 	set number relativenumber
 	colorscheme pywal
+	hi CursorLine term=bold cterm=bold guibg=Grey20
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
