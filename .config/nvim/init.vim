@@ -28,7 +28,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'AlphaTechnolog/pywal.nvim'
-
+Plug 'Raimondi/delimitMate'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 call plug#end()
 
 " Basic definitions
@@ -89,6 +92,9 @@ call plug#end()
     else
         let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
     endif
+
+" Auto-completation
+let g:coq_settings = { 'auto_start': v:true }
 
 " Function for toggling the bottom statusbar:
 let s:hidden_all = 1
