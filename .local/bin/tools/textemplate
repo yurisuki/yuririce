@@ -2,7 +2,9 @@
 # Use TeX template
 
 curdir="$(pwd)" # Includes current dir, later used for copying.
-templatesdirectory="$HOME/Dropbox/Templates" # Here you specify your directory with templates ($HOME/Templates by default).
+templatesdirectory="$HOME/Dropbox/Templatesw" # Here you specify your directory with templates ($HOME/Dropbox/Templates by default).
+
+
 
 openwithfzf(){ # Open fzf.
 	clear
@@ -12,6 +14,10 @@ template="$(fzf \
 	exit 1
 }
 
+# Check if $templates directory exists.
+! [ -d "$templatesdirectory" ] && echo "Directory \"$templatesdirectory\" doesn't exist. Make sure you've changed it, or created one." && sleep 3 && exit 1
+
+# Get to the $templatesdirectory
 cd "$templatesdirectory"
 
 case "$1" in
@@ -22,8 +28,6 @@ esac
 
 set template=$1
 
-# Check if $templates directory exists.
-! [ -d "$templatesdirectory" ] && echo "Directory $templatesdirectory doesn't exist. Make sure you changed it, or created one." && sleep 3 && exit 1
 
 # Check if file exists.
 ! [ -f "$templatesdirectory/$template" ] && echo "This template doesn't exist!" && sleep 3 && exit 1
