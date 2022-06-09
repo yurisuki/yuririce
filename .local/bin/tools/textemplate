@@ -2,7 +2,7 @@
 # Use TeX template
 
 curdir="$(pwd)" # Includes current dir, later used for copying.
-templatesdirectory="$HOME/Dropbox/Templatesw" # Here you specify your directory with templates ($HOME/Dropbox/Templates by default).
+templatesdirectory="$HOME/Dropbox/Templates" # Here you specify your directory with templates ($HOME/Dropbox/Templates by default).
 
 
 
