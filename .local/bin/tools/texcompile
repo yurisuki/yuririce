@@ -15,6 +15,7 @@ printf "No file compiled.\n" && notify-send "No file compiled." && exit 1
 
 openlastcompiled(){ # Function which will open last compiled document.
 lastcompiled=$(cat /tmp/lastcompiled) || faillastcompiled
+! [ -s "$lastcompiled" ] && faillastcompiled # Check if file still exists.
 printf "Opening last compiled document.\n"
 $READER "$lastcompiled" >/dev/null 2>&1 &
 exit 0
