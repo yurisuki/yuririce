@@ -28,6 +28,7 @@ alias \
 	calcurse="calcurse -D ~/.config/calcurse" \
 	p="trizen" \
 	P="sudo pacman" \
+	pc="p -ccS" \
 	rb="pkill -RTMIN+8 i3blocks" \
 	SS="sudo systemctl" \
 	v="$EDITOR" \
