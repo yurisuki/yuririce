@@ -5,8 +5,8 @@
 # Made by yurisuki <adam@adamnvrtil.fun>
 
 ## Text of your choice.
-figlettext="T" # Text/letter that will be shown.
-emoji="❤️" # Emoji/letter that will be shown. (optional)
+figlettext="Hustle" # Text/letter that will be shown.
+emoji="💸" # Emoji/letter that will be shown. (optional)
 
 ! command -v figlet >/dev/null 2>&1 && nofonts=1
 

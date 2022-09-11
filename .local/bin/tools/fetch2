@@ -4,8 +4,8 @@
 # Made by yurisuki <adam@adamnvrtil.fun>
 
 ## Text of your choice
-text="T" # Text/letter that will be shown.
-emoji="❤️"  # Emoji/letter that will be shown. (optional)
+text="Hustle" # Text/letter that will be shown.
+emoji="💸"  # Emoji/letter that will be shown. (optional)
 
 ## Colours
 red="$(tput setaf 1)"
