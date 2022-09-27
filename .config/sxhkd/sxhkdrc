@@ -97,7 +97,7 @@ super + a
 super + shift + a
 	ddmixer
 super + m
-	ifinstalled cider && cider
+	ifinstalled /opt/Cider/cider && /opt/Cider/cider
 super + shift + m
 	playerctl play-pause
 super + n

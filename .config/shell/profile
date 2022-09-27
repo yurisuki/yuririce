@@ -7,7 +7,7 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="kitty"
-export BROWSER="qutebrowser"
+export BROWSER="brave"
 export READER="zathura"
 export FILE="ranger"
 export GUIFILE="thunar"
