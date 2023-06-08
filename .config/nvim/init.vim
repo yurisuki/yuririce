@@ -27,8 +27,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
-Plug 'AlphaTechnolog/pywal.nvim'
 Plug 'Raimondi/delimitMate'
+Plug 'dylanaraps/wal.vim'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
@@ -52,7 +52,7 @@ call plug#end()
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
-	colorscheme pywal
+	colorscheme wal
 	hi CursorLine term=bold cterm=bold guibg=Grey20
 " Enable autocompletion:
 	set wildmode=longest,list,full

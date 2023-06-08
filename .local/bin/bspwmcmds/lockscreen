@@ -2,14 +2,14 @@
 # Lockscreen script - it does basically what's its name.
 
 # Pause music/videos
-mpc pause
-playerctl pause
-mpv pause
+mpc pause &
+playerctl pause &
+mpv pause &
 
 ### Lock the screen
 slock &
 
 # Dim screen
-sleep 0.1 && xset dpms force off &
+sleep 5 && ! pgrep slock || xset dpms force off &
 
 wait

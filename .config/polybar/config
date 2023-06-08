@@ -117,31 +117,31 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = 直 <label-connected>
+format-connected = 󰖩 <ramp-signal> <label-connected>
 label-connected = %essid%
 
 ;format-disconnected =
-format-disconnected = <label-disconnected>
+format-disconnected = 󱛅 <label-disconnected>
 ;label-disconnected = %ifname% disconnected
-label-disconnected = 睊 no wifi
+label-disconnected = not connected
 label-disconnected-foreground = ${colors.gray}
 
-; <ramp-signal>
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.gray}
+ramp-signal-0 = 󰢿
+ramp-signal-1 = 󰢼
+ramp-signal-2 = 󰢽
+ramp-signal-3 = 󰢾
 
 [module/date]
 type = internal/date
 interval = 60
 
-date = "%Y %b %d (%a)"
+date = "%d.%m.%Y"
 time = "%H:%M"
 
-format-prefix = " "
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+format-prefix = "󰃰 "
 
 label = %date% %time%
 
@@ -153,8 +153,8 @@ label-volume = 
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.gray}
 label-muted = muted
+label-muted-foreground = ${colors.gray}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.blue}
@@ -165,18 +165,15 @@ bar-volume-foreground-4 = ${colors.green}
 bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = =
-bar-volume-fill-font = 2
-bar-volume-empty = =
-bar-volume-empty-font = 2
+bar-volume-indicator = 󰇝
+bar-volume-fill = 
+bar-volume-empty = 
 bar-volume-empty-foreground = ${colors.gray}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ADP1
+battery = BAT0
+adapter = AC
 full-at = 98
 
 ;format-charging = Charging... <label-charging>
@@ -185,20 +182,35 @@ format-charging = <animation-charging> <label-charging>
 ;format-discharging = <label-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " "
+time-format = %H:%M
+label-discharging = %percentage%% 󱧥 %time%
 
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
+;format-full-prefix = " "
+label-full = 󱟢
+label-full-foreground = ${colors.gray}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
-animation-charging-3 = " "
-animation-charging-4 = " "
-animation-charging-framerate = 500
+ramp-capacity-0 = "󰂎"
+ramp-capacity-1 = "󰁺"
+ramp-capacity-2 = "󰁻"
+ramp-capacity-3 = "󰁼"
+ramp-capacity-4 = "󰁽"
+ramp-capacity-5 = "󰁾"
+ramp-capacity-6 = "󰁿"
+ramp-capacity-7 = "󰂀"
+ramp-capacity-8 = "󰂁"
+ramp-capacity-9 = "󰁹"
+
+animation-charging-0 = "󰂎"
+animation-charging-1 = "󰁺"
+animation-charging-2 = "󰁻"
+animation-charging-3 = "󰁼"
+animation-charging-4 = "󰁽"
+animation-charging-5 = "󰁾"
+animation-charging-6 = "󰁿"
+animation-charging-7 = "󰂀"
+animation-charging-8 = "󰂁"
+animation-charging-9 = "󰁹"
+animation-charging-framerate = 200
 
 [settings]
 screenchange-reload = true
