@@ -13,7 +13,7 @@ track() { metadata | grep title | sed -e 's/^.*title//' | sed -e 's/^[ \t]*//' ;
 
 # If music is paused, make variable pause.
 if [ $(playerctl status) = "Paused" ]; then
-	pause="  "
+	pause=" "
 fi
 
 # This one is being showed on the bar.
